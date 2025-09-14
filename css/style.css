@@ -1,33 +1,53 @@
 /*******************************/
 /********* General CSS *********/
 /*******************************/
+/* Style global du body */
 body {
-    color: #797979;
-    background: #ffffff;
+    color: #555; /* un peu plus sombre pour la lisibilité */
+    background-color: #ffffff;
     font-family: 'Montserrat', sans-serif;
+    line-height: 1.6; /* améliore la lecture */
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
-h1,
-h2, 
-h3, 
-h4,
-h5, 
-h6 {
-    color: #414141;
+/* Titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #333; /* légèrement plus foncé pour un meilleur contraste */
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
 }
 
+/* Liens */
 a {
     color: #313131;
-    transition: .3s;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 a:hover,
 a:active,
 a:focus {
-    color: #a35536;
+    color: #a35536; /* couleur accent */
     outline: none;
-    text-decoration: none;
+    text-decoration: underline; /* indique le survol */
+    transform: translateY(-2px); /* léger effet “hover” */
 }
+
+/* Texte important ou en surbrillance */
+strong, b {
+    color: #222;
+}
+
+/* Amélioration pour les paragraphes */
+p {
+    margin-bottom: 1rem;
+    color: black;
+}
+
 
 .btn:focus,
 .form-control:focus {
@@ -132,110 +152,143 @@ a:focus {
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
-.navbar {
-    position: relative;
-    transition: .5s;
-    z-index: 999;
-}
+/* === NAVBAR (Desktop) === */
+@media (min-width: 992px) {
+  .navbar {
+    position: absolute;
+    width: 100%;
+    padding: 20px 40px;
+    background: transparent;
+    z-index: 9999;
+    transition: all 0.3s ease;
+  }
 
-.navbar.nav-sticky {
+  /* Navbar sticky */
+  .navbar.nav-sticky {
     position: fixed;
     top: 0;
+    padding: 12px 40px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Logo */
+  .navbar .navbar-brand {
+    color: #ffffff;
+    transition: color 0.3s ease;
+  }
+  .navbar.nav-sticky .navbar-brand {
+    color: #a35536;
+  }
+
+  /* Liens */
+  .navbar-light .navbar-nav {
+    display: flex;
+    flex-wrap: nowrap; /* empêche les liens de passer à la ligne */
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    position: relative;
+    padding: 10px 8px; /* réduit légèrement le padding horizontal */
+    margin: 0 4px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* empêche le texte de passer à la ligne */
+  }
+
+  .navbar-light.nav-sticky .navbar-nav .nav-link {
+    color: #414141;
+  }
+
+  /* Effet hover */
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #ffffff;
+  }
+  .navbar-light.nav-sticky .navbar-nav .nav-link:hover {
+    color: #a35536;
+  }
+
+  /* Barre sous le lien */
+  .navbar-light .navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width:0;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    transition: width 0.25s ease;
+  }
+  .navbar-light .navbar-nav .nav-link:hover::after,
+  .navbar-light .navbar-nav .nav-link.active::after {
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+  }
+
+  /* Version sticky (barre en couleur) */
+  .navbar-light.nav-sticky .navbar-nav .nav-link::after {
+    background-color: #a35536;
+  }
 }
 
-.navbar .navbar-brand {
-    margin: 0;
-    font-size: 45px;
-    line-height: 0px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    transition: .5s;
-    
+/* === NAVBAR (Mobile) === */
+@media (max-width: 991.98px) {
+  .navbar {
+    padding: 15px;
+    background: #ffffff;
+  }
+
+  .navbar .navbar-brand {
+    color: #a35536;
+  }
+
+  .navbar .navbar-nav {
+    margin-top: 15px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .navbar .navbar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar .nav-link {
+    position: relative;
+    padding: 10px 15px;
+    margin: 3px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* empêche les liens longs de passer à la ligne */
+  }
+
+  /* Barre sous les liens */
+  .navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #a35536;
+    border-radius: 1px;
+    transition: width 0.25s ease;
+  }
+  .navbar .nav-link:hover::after,
+  .navbar .nav-link.active::after {
+    width: 30px;
+  }
 }
 
-.navbar .navbar-brand img {
-    max-width: 100%;
-    max-height: 40px;
-}
 
-.navbar .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-    border-radius: 0;
-    background: #f8f9fa;
-}
 
-@media (min-width: 992px) {
-    .navbar {
-        position: absolute;
-        width: 100%;
-        padding: 30px 60px;
-        background: transparent !important;
-        border-bottom: 1px dashed rgba(256, 256, 256, .2);
-        z-index: 9;
-    }
-    
-    .navbar.nav-sticky {
-        padding: 10px 60px;
-        background: #ffffff !important;
-    }
-    
-    .navbar .navbar-brand {
-        color: #ffffff;
-    }
-    
-    .navbar.nav-sticky .navbar-brand {
-        color:#a35536;
-    }
-
-    .navbar-light .navbar-nav .nav-link,
-    .navbar-light .navbar-nav .nav-link:focus {
-        padding: 10px 10px 8px 10px;
-        color: #ffffff;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    
-    .navbar-light.nav-sticky .navbar-nav .nav-link,
-    .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
-        color: #414141;
-    }
-
-    .navbar-light .navbar-nav .nav-link:hover,
-    .navbar-light .navbar-nav .nav-link.active {
-        color: #111111;
-    }
-    
-    .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
-    .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-        color:#a35536;
-    }
-}
-
-@media (max-width: 991.98px) {   
-    .navbar {
-        padding: 15px;
-        background: #ffffff !important;
-    }
-    
-    .navbar .navbar-brand {
-        color:#a35536;
-    }
-    
-    .navbar .navbar-nav {
-        margin-top: 15px;
-    }
-    
-    .navbar a.nav-link {
-        padding: 5px;
-    }
-    
-    .navbar .dropdown-menu {
-        box-shadow: none;
-    }
-}
 
 
 /*******************************/
@@ -247,7 +300,7 @@ a:focus {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(rgba(138, 40, 10, 0.952), rgba(138, 40, 10, 0.952)), url(../img/hero-bg.jpg);
+    background: linear-gradient(45deg, #8a280a, #a56a59, #c75014);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -262,24 +315,45 @@ a:focus {
     align-items: center;
     min-height: calc(100vh - 120px);
 }
-
 .hero .hero-image {
     position: relative;
     text-align: right;
-    padding-right: 0;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    margin-right: -100px;
+    overflow: hidden; /* évite les débordements */
+    padding-right: 20px; /* légèrement décalé pour aligner */
+    transition: transform 0.5s ease;
 }
 
 .hero .hero-image img {
-    max-width: 120%;
+    max-width: 100%;
     height: auto;
-    object-fit: contain;
-    transform: scale(1.2);
+    object-fit: cover; /* garde les proportions */
+    border-radius: 16px; /* arrondi moderne */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
+
+/* Effet au survol */
+.hero .hero-image:hover img {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 12px 36px rgba(0,0,0,0.25);
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 767px) {
+    .hero .hero-image {
+        justify-content: center;
+        padding-right: 0;
+    }
+    .hero .hero-image img {
+        transform: scale(1);
+        width: 90%;
+    }
+}
+
 
 .hero .hero-content {
     position: relative;
@@ -457,57 +531,7 @@ a:focus {
 }
 
 
-/*******************************/
-/******* Section Header ********/
-/*******************************/
-.section-header {
-    position: relative;
-    margin-bottom: 48px;
-}
 
-.section-header p, .section-header.text-center p {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 20px !important;
-    font-weight: 700 !important;
-    color: #797979 !important;
-    background: #fff !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    margin-bottom: 10px !important;
-    border: none !important;
-    box-shadow: none !important;
-    display: inline-block !important;
-    position: relative;
-}
-
-.section-header p::before,
-.section-header p::after,
-.section-header.text-center p::before,
-.section-header.text-center p::after {
-    display: none !important;
-    content: none !important;
-}
-
-.section-header h2 {
-    margin: 0;
-    position: relative;
-    font-size: 45px;
-    font-weight: 700;
-}
-
-@media (max-width: 767.98px) {
-    .section-header h2 {
-        font-size: 30px;
-    }
-}
-
-.section-header.text-center p {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-start;
-    min-width: 240px;
-    text-align: left;
-}
 
 
 /*******************************/
@@ -530,13 +554,15 @@ a:focus {
 .about .about-img {
     position: relative;
     height: 100%;
-}
 
+}
 .about .about-img img {
     position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border: 4px ; 
+    border-radius: 16px;    
 }
 
 .about .about-content {
@@ -569,14 +595,15 @@ a:focus {
 .about .progress {
     height: 10px;
     border-radius: 10px;
-    background: #a35536;
+    background: #eee;
 }
 
 .about .progress .progress-bar {
     width: 0px;
     background: #a35536;
     border-radius: 10px;
-    transition: 2s;
+    transition: width 1.5s ease-in-out;
+
 }
 
 .about .about-text a.btn {
@@ -591,19 +618,19 @@ a:focus {
 
 
 /*******************************/
-/******* Experience CSS ********/
+/******* parcours CSS ********/
 /*******************************/
-.experience {
+.parcours {
     position: relative;
     padding: 45px 0 15px 0;
 }
 
-.experience .timeline {
+.parcours .timeline {
     position: relative;
     width: 100%;
 }
 
-.experience .timeline::after {
+.parcours .timeline::after {
     content: '';
     position: absolute;
     width: 2px;
@@ -614,24 +641,24 @@ a:focus {
     margin-left: -1px;
 }
 
-.experience .timeline .timeline-item {
+.parcours .timeline .timeline-item {
     position: relative;
     background: inherit;
     width: 50%;
     margin-bottom: 30px;
 }
 
-.experience .timeline .timeline-item.left {
+.parcours .timeline .timeline-item.left {
     left: 0;
     padding-right: 30px;
 }
 
-.experience .timeline .timeline-item.right {
+.parcours .timeline .timeline-item.right {
     left: 50%;
     padding-left: 30px;
 }
 
-.experience .timeline .timeline-item::after {
+.parcours .timeline .timeline-item::after {
     content: '';
     position: absolute;
     width: 16px;
@@ -644,11 +671,11 @@ a:focus {
     z-index: 1;
 }
 
-.experience .timeline .timeline-item.right::after {
+.parcours .timeline .timeline-item.right::after {
     left: -8px;
 }
 
-.experience .timeline .timeline-item::before {
+.parcours .timeline .timeline-item::before {
   content: '';
   position: absolute;
   width: 0;
@@ -660,12 +687,12 @@ a:focus {
   border-color: transparent transparent transparent #dddddd;
 }
 
-.experience .timeline .timeline-item.right::before {
+.parcours .timeline .timeline-item.right::before {
   left: 10px;
   border-color: transparent #dddddd transparent transparent;
 }
 
-.experience .timeline .timeline-date {
+.parcours .timeline .timeline-date {
     position: absolute;
     width: 100%;
     top: 44px;
@@ -677,17 +704,17 @@ a:focus {
     z-index: 1;
 }
 
-.experience .timeline .timeline-item.left .timeline-date {
+.parcours .timeline .timeline-item.left .timeline-date {
     text-align: left;
     left: calc(100% + 55px);
 }
 
-.experience .timeline .timeline-item.right .timeline-date {
+.parcours .timeline .timeline-item.right .timeline-date {
     text-align: right;
     right: calc(100% + 55px);
 }
 
-.experience .timeline .timeline-text {
+.parcours .timeline .timeline-text {
     padding: 30px;
     background: #ffffff;
     position: relative;
@@ -695,61 +722,61 @@ a:focus {
     box-shadow: 0 0 60px rgba(0, 0, 0, .08);
 }
 
-.experience .timeline .timeline-item.right .timeline-text {
+.parcours .timeline .timeline-item.right .timeline-text {
     border-right: none;
     border-left: 5px solid #dddddd;
 }
 
-.experience .timeline .timeline-text h2 {
+.parcours .timeline .timeline-text h2 {
     margin: 0 0 5px 0;
     font-size: 22px;
     font-weight: 600;
 }
 
-.experience .timeline .timeline-text h4 {
+.parcours .timeline .timeline-text h4 {
     margin: 0 0 10px 0;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
 }
 
-.experience .timeline .timeline-text p {
+.parcours .timeline .timeline-text p {
     margin: 0;
     font-size: 16px;
 }
 
 @media (max-width: 767.98px) {
-    .experience .timeline::after {
+    .parcours .timeline::after {
         left: 8px;
     }
 
-    .experience .timeline .timeline-item {
+    .parcours .timeline .timeline-item {
         width: 100%;
         padding-left: 38px;
     }
     
-    .experience .timeline .timeline-item.left {
+    .parcours .timeline .timeline-item.left {
         padding-right: 0;
     }
     
-    .experience .timeline .timeline-item.right {
+    .parcours .timeline .timeline-item.right {
         left: 0%;
         padding-left: 38px;
     }
 
-    .experience .timeline .timeline-item.left::after, 
-    .experience .timeline .timeline-item.right::after {
+    .parcours .timeline .timeline-item.left::after, 
+    .parcours .timeline .timeline-item.right::after {
         left: 0;
     }
     
-    .experience .timeline .timeline-item.left::before,
-    .experience .timeline .timeline-item.right::before {
+    .parcours .timeline .timeline-item.left::before,
+    .parcours .timeline .timeline-item.right::before {
         left: 18px;
         border-color: transparent #dddddd transparent transparent;
     }
     
-    .experience .timeline .timeline-item.left .timeline-date,
-    .experience .timeline .timeline-item.right .timeline-date {
+    .parcours .timeline .timeline-item.left .timeline-date,
+    .parcours .timeline .timeline-item.right .timeline-date {
         position: relative;
         top: 0;
         right: auto;
@@ -758,8 +785,8 @@ a:focus {
         margin-bottom: 10px;
     }
     
-    .experience .timeline .timeline-item.left .timeline-text,
-    .experience .timeline .timeline-item.right .timeline-text {
+    .parcours .timeline .timeline-item.left .timeline-text,
+    .parcours .timeline .timeline-item.right .timeline-text {
         border-right: none;
         border-left: 5px solid #dddddd;
     }
@@ -767,83 +794,67 @@ a:focus {
 
 
 /*******************************/
-/********* Service CSS *********/
+/********* BTS CSS *********/
 /*******************************/
-.service {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
+ .section-header {
+                text-align: center;
+                padding: 60px 20px 20px;
+            }
+            .section-header p {
+                font-size: 18px;
+                color: black;
+                margin-bottom: 10px;
+                background: none;      
+                text-transform: none;
+            }
+            .BtsSIO {
+                width: 80%;
+                background:linear-gradient(45deg, #8a280a, #8b4e3c, #53260f);
+                color: white;
+                margin: 0 auto 40px;
+                padding: 40px 30px;
+                border-radius: 12px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            }
+            .BtsSIO h1 {
+                font-size: 25px;
+                margin-bottom: 20px;
+                color: beige;
+            }
+            .BtsSIO h3 {
+                font-size: 20px;
+                margin-top: 30px;
+                margin-bottom: 10px;
+                color: #ffd28a;
+            }
+            .BtsSIO p {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 6px;
+                text-transform: none;
+                margin-top: 10px;
+            }
+            .BtsSIO ul {
+                text-align: left;
+                padding-left: 20px;
+                margin-bottom: 20px;
+            }
+            .BtsSIO ul li {
+                margin-bottom: 6px;
+            }
+            @media (max-width: 768px) {
+                .BtsSIO {
+                    width: 95%;
+                    padding: 25px 15px;
+                }
+                .BtsSIO h1 {
+                    font-size: 24px;
+                }
+                .BtsSIO h3 {
+                    font-size: 18px;
+                }
+            }
 
-.service .service-item {
-    position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    box-shadow: inset 0 0 0 0 transparent;
-    transition: ease-out 0.5s;
-}
-
-.service .service-item:hover {
-    box-shadow: inset 800px 0 0 0 #a35536;
-}
-
-.service .service-icon {
-    position: relative;
-    width: 150px;
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #a35536;
-    background: #ffffff;
-}
-
-.service .service-icon i {
-    position: relative;
-    font-size: 60px;
-    color: #a35536;
-    transition: .3s;
-}
-
-.service .service-item:hover i {
-    font-size: 75px;
-}
-
-.service .service-text {
-    position: relative;
-    width: calc(100% - 120px);
-    padding: 0 30px;
-}
-
-.service .service-text h3 {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: 600;
-    transition: 1s;
-}
-
-.service .service-text p {
-    margin: 0;
-    font-size: 16px;
-    transition: 1s;
-}
-
-.service .service-item:hover .service-text h3,
-.service .service-item:hover .service-text p {
-    color: #ffffff;
-}
-
-@media (max-width: 575.98px) {
-    .service .service-text h3 {
-        font-size: 16px;
-        margin-bottom: 5px;
-    }
-    
-    .service .service-text p {
-        font-size: 14px;
-    }
-}
 
 
 /*******************************/
@@ -951,373 +962,27 @@ a:focus {
     box-shadow: inset 0 0 0 0 #a35536;
     border-color: #a35536;
 }
-
-
 /*******************************/
-/********* Banner CSS **********/
+/******* veille CSS *******/
 /*******************************/
-.banner {
+.veille {
     position: relative;
-    width: 100%;
-    margin: 45px 0;
-    padding: 90px 0;
-    background: #a35536;
-}
-
-.banner .container {
-    max-width: 750px;
-    text-align: center;
-}
-
-.banner .section-header {
-    margin-bottom: 20px;
-}
-
-.banner .section-header p {
-    color: #414141;
-    background: transparent;
-}
-
-.banner .section-header p::after {
-    display: none;
-}
-
-.banner .section-header h2 {
-    color: #ffffff;
-}
-
-.banner .section-header h2 span {
-    color: #414141;
-    font-size: 50px;
-}
-
-.banner .banner-text p {
-    font-size: 18px;
-    color: #ffffff;
-}
-
-.banner .banner-text .btn {
-    margin-top: 15px;
-    color: #a35536;
-    background: #ffffff;
-    box-shadow: inset 0 0 0 50px #ffffff;
-}
-
-.banner .banner-text .btn:hover {
-    color: #ffffff;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #ffffff;
-    border-color: #ffffff;
-}
-
-
-/*******************************/
-/********* Pricing CSS *********/
-/*******************************/
-.price {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.price .row {
-    padding: 0 15px;
-}
-
-.price .col-md-4 {
-    padding: 0;
-}
-
-.price .price-item {
-    position: relative;
-    margin-bottom: 30px;
-    background: #ffffff;
-}
-
-.price .featured-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-    z-index: 1;
-}
-
-.price .price-header,
-.price .price-body,
-.price .price-footer {
-    position: relative;
-    text-align: center;
-}
-
-.price .price-header {
-    padding: 45px 0 30px 0;
-    color: #414141;
-}
-
-.price .price-item.featured-item .price-header {
-    color: #a35536;
-}
-
-.price .price-title h2 {
-    font-size: 25px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.price .price-prices h2 {
-    font-size: 45px;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.price .price-prices h2 small {
-    position: absolute;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 9px;
-    margin-left: -12px;
-}
-
-.price .price-prices h2 span {
-    margin-left: 1px;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.price .price-item.featured-item h2 {
-    color: #a35536;
-}
-
-.price .price-body {
-    padding: 0 0 20px 0;
-}
-
-.price .price-description ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.price .price-description ul li {
-    padding: 0 0 20px 0;
-}
-
-.price .price-item .price-action {
-    padding-bottom: 45px;
-}
-
-.price .price-item .price-action .btn {
-    color: #ffffff;
-    background: #414141;
-    box-shadow: inset 0 0 0 50px #414141;
-}
-
-.price .price-item .price-action .btn:hover {
-    color: #414141;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #414141;
-    border-color: #414141;
-}
-
-.price .price-item.featured-item .price-action .btn {
-    color: #ffffff;
-    background: #a35536;
-    box-shadow: inset 0 0 0 50px #a35536;
-}
-
-.price .price-item.featured-item .price-action .btn:hover {
-    color: #a35536;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #a35536;
-    border-color: #a35536;
-}
-
-
-/*******************************/
-/*********** Team CSS **********/
-/*******************************/
-.team {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.team .team-item {
-    position: relative;
-    background: #ffffff;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    box-shadow: inset 0 0 0 0 transparent;
-    transition: ease-out 0.5s;
-}
-
-.team .team-img {
-    position: relative;
-    width: 50%;
-    overflow: hidden;
-}
-
-.team .team-img img {
-    position: relative;
-    width: 100%;
-    transition: .5s;
-}
-
-.team .team-text {
-    position: relative;
-    width: 50%;
-    padding: 0 30px;
-}
-
-.team .team-text h2 {
-    color:#a35536;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    transition: 1s;
-}
-
-.team .team-text h4 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    transition: 1s;
-}
-
-.team .team-text p {
-    margin-bottom: 20px;
-    transition: 1s;
-}
-
-.team .team-social {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.team .team-social a.btn {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: normal;
-    margin-right: 5px;
-}
-
-.team .team-item:hover {
-    box-shadow: inset 800px 0 0 0 #a35536;
-}
-
-.team .team-item:hover .team-img img {
-    transform: scale(1.2);
-}
-
-.team .team-item:hover .team-text h2,
-.team .team-item:hover .team-text h4,
-.team .team-item:hover .team-text p {
-    color: #ffffff;
-}
-
-.team .team-item:hover .team-social a.btn {
-    background: #ffffff;
-}
-
-.team .team-item:hover .team-social a.btn:hover {
-    border-color: #ffffff;
-}
-
-@media(max-width: 575.98px) {
-    .team .team-text {
-        padding: 0 15px;
-    }
-    
-    .team .team-text h2 {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-
-    .team .team-text h4 {
-        margin-bottom: 5px;
-    }
-
-    .team .team-text p {
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: 10px;
-    }
-}
-
-
-/*******************************/
-/******* Testimonial CSS *******/
-/*******************************/
-.testimonial {
-    position: relative;
-    width: 100%;
+    width: 70%;
+    margin: 0 auto; /* centre horizontalement */
     padding: 45px 0 15px 0;
     background: #ffffff;
 }
 
-.testimonial .section-header {
-    position: relative;
-    margin-bottom: 45px;
-    text-align: center;
-}
-
-.testimonial .section-header p {
-    display: inline-block !important;
-    margin: 0 30px !important;
-    margin-bottom: 10px !important;
-    padding-left: 15px !important;
-    padding-right: 30px !important;
-    min-width: 220px !important;
-    width: auto !important;
-    overflow: visible !important;
-    position: relative !important;
-    font-size: 16px !important;
-    font-weight: 600 !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important;
-    background: #ffffff !important;
-}
-
-.testimonial .section-header p::before {
-    position: absolute !important;
-    content: "" !important;
-    height: 3px !important;
-    top: 11px !important;
-    right: 0 !important;
-    left: -30px !important;
-    background: #a35536 !important;
-    z-index: -1 !important;
-    transition: none !important;
-}
-
-.testimonial .section-header p::after {
-    position: absolute !important;
-    content: "" !important;
-    width: 3px !important;
-    height: 3px !important;
-    top: 11px !important;
-    left: 3px !important;
-    background: #a35536 !important;
-    z-index: 1 !important;
-    transition: none !important;
-}
-
-.testimonial .section-header h2 {
+.veille .section-header h2 {
     margin: 0;
     position: relative;
-    font-size: 45px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 200;
 }
 
 .cloud-content {
     width: 100%;
-    background-color: #a35536;
+    background:linear-gradient(45deg, #8a280a, #8b4e3c, #7c3a19);
     color: white;
     margin: 0 auto 40px;
     padding: 40px 50px;
@@ -1328,14 +993,14 @@ a:focus {
 .cloud-content h2 {
     margin: 0 0 40px 0;
     position: relative;
-    font-size: 45px;
-    font-weight: 700;
+    font-size: 30px;
+    font-weight: 500;
     color: #ffffff;
     text-align: center;
 }
 
 .cloud-content h3 {
-    font-size: 30px;
+    font-size: 20px;
     margin-bottom: 30px;
     color: beige;
     text-align: center;
@@ -1415,7 +1080,7 @@ a:focus {
 
 .model-card h4, .provider-card h4 {
     color: #ffffff;
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -1510,16 +1175,6 @@ a:focus {
     padding: 24px 0 16px 0;
     background: #fff;
 }
-.section-header p {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    position: relative;
-    margin-bottom: 20px;
-    color: #333;
-}
 
 .section-header p::before {
     content: "";
@@ -1539,7 +1194,7 @@ a:focus {
 
 
 .contact-bg {
-    background: #a35536;
+   background:linear-gradient(45deg, #8a280a, #8b4e3c, #53260f);
     border-radius: 22px;
     box-shadow: 0 4px 24px rgba(163,85,54,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
     width: 80%;
@@ -1638,81 +1293,6 @@ a:focus {
 }
 
 
-/*******************************/
-/*********** Blog CSS **********/
-/*******************************/
-.blog {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.blog .blog-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.blog .blog-img {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.blog .blog-img img {
-    width: 100%;
-    transition: .5s;
-}
-
-.blog .blog-item:hover img {
-    transform: scale(1.1);
-}
-
-.blog .blog-text {
-    position: relative;
-    padding: 30px;
-    border-right: 1px solid rgba(0, 0, 0, .07);
-    border-bottom: 1px solid rgba(0, 0, 0, .07);
-    border-left: 1px solid rgba(0, 0, 0, .07);
-}
-
-.blog .blog-text h2 {
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.blog .blog-text p {
-    margin-bottom: 10px;
-}
-
-.blog .blog-item a.btn {
-    margin-top: 10px;
-    padding: 8px 15px;
-}
-
-.blog .blog-item a.btn i {
-    margin-left: 5px;
-}
-
-.blog .blog-meta {
-    position: relative;
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.blog .blog-meta p {
-    margin: 0 10px 0 0;
-    font-size: 13px;
-}
-
-.blog .blog-meta i {
-    color: #414141;
-    margin-right: 5px;
-}
-
-.blog .blog-meta p:last-child {
-    margin: 0;
-}
-
 
 /*******************************/
 /********* Footer CSS **********/
@@ -1720,7 +1300,7 @@ a:focus {
 .footer {
     position: relative;
     margin-top: 45px;
-    background: #a35536;
+    background: linear-gradient(45deg, #8a280a, #fdb29e, #ffd1b9);
 }
 
 .footer .container-fluid {
@@ -1849,11 +1429,12 @@ a:focus {
     background: #fff;
     border-radius: 16px;
     box-shadow: 0 4px 24px rgba(163, 85, 54, 0.10), 0 1.5px 6px rgba(163, 85, 54, 0.08);
-    padding: 32px 24px;
+    padding: 20px 15px;
     margin-bottom: 32px;
+    margin: 16px;
     transition: transform 0.2s, box-shadow 0.2s;
     border: 2px solid #a35536;
-    min-height: 320px;
+    min-height: 220px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1861,7 +1442,7 @@ a:focus {
 }
 
 .cube.services-1 .icon-skill {
-    font-size: 64px;
+    font-size: 48px;
     margin-bottom: 22px;
     display: flex;
     align-items: center;
@@ -1871,7 +1452,7 @@ a:focus {
 
 .cube.services-1 h3 {
     color: #a35536;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 18px;
     letter-spacing: 1px;
@@ -1894,7 +1475,7 @@ a:focus {
 }
 
 .cube.services-1 ul, .cube.services-1 li {
-    font-size: 16px;
+    font-size: 14px;
     color: #444;
     margin-bottom: 8px;
     list-style: disc inside;
@@ -1907,8 +1488,8 @@ a:focus {
 
 .cube.services-1:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(163, 85, 54, 0.18), 0 3px 12px rgba(163, 85, 54, 0.12);
-    background: #f9f4f2;
+    box-shadow: 0 8px 32px rgba(163, 85, 54, 0.719), 0 3px 12px rgba(163, 85, 54, 0.12);
+    background: #b96d4d;
 }
 
 @media (max-width: 767.98px) {
@@ -1928,11 +1509,11 @@ a:focus {
     }
 }
 
-#skills-section .section-header {
+#competences .section-header {
     margin-bottom: 20px !important;
 }
 
-#skills-section .row.skill {
+#competences .row.skill {
     margin-top: 0 !important;
 }
 
@@ -1997,6 +1578,7 @@ a:focus {
     margin-top: 2px;
     letter-spacing: 0.5px;
 }
+
 
 .contact-form {
     background: #fff;

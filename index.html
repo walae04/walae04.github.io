@@ -17,7 +17,10 @@
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <!-- Owl Carousel CSS via CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
@@ -26,28 +29,46 @@
 
     <body data-spy="scroll" data-target=".navbar" data-offset="51">
         <!-- Nav Bar Start -->
-        <div class="navbar navbar-expand-lg bg-light navbar-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a href="#home" class="navbar-brand">DevFolio</a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto">
-                        <a href="#home" class="nav-item nav-link">Accueil</a>
-                        <a href="#about" class="nav-item nav-link">A propos de moi</a>
-                        <a href="#service" class="nav-item nav-link">BTS SIO</a>
-                        <a href="#experience" class="nav-item nav-link">Parcours</a>
-                        <a href="#skills-section" class="nav-item nav-link">Compétences</a>
-                        <a href="#tools-section" class="nav-item nav-link">Outils</a>
-                        <a href="#portfolio" class="nav-item nav-link">Projets</a>
-                        <a href="#testimonial" class="nav-item nav-link">Veille Technologique</a>
-                        <a href="#contact" class="nav-item nav-link">Contact</a>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link active">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">À propos de moi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#bts-sio" class="nav-link">BTS SIO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#parcours" class="nav-link">Parcours</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#competences" class="nav-link">Compétences</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#outils" class="nav-link">Outils</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projets" class="nav-link">Projets</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#veille-technologique" class="nav-link">Veille Technologique</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
         <!-- Nav Bar End -->
 
 
@@ -70,7 +91,7 @@
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <div class="hero-image">
-                            <img src="img/profil.jpg" alt="Photo de profil" class="profile-img">
+                            <img src="img/profil.jpg" alt="Photo de profil" class="profile-img rounded-4">
                         </div>
                     </div>
                 </div>
@@ -142,10 +163,10 @@
                                 </div>
                                 
                                 <div class="skill-name">
-                                    <p>Apps Development</p><p>85%</p>
+                                    <p>Apps Development</p><p>75%</p>
                                 </div>
                                 <div class="progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </div>
                           
@@ -157,43 +178,50 @@
         <!-- About End -->
         
         
-        <!-- Service Start -->
-        <div class="service" id="service">
-            <div class="container">
-                <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p style="text-align: center; width: 100%; margin-bottom: 28px;">BTS SIO</p>
-                    <div class="BtsSIO ftco-animate">
-                        <h1 style="text-align: center;">Qu' est-ce que le BTS SIO? </h1>
-                        <p>Le BTS SIO (Services Informatiques aux Organisations) qui prépare les étudiants à 
-                            travailler dans le domaine de l'informatique au sein des organisations et des entreprises et comprend 2 options :</p>
-                    
-                        <h3 >Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</h3>
-                        <p>Cette option se concentre sur la gestion des infrastructures informatiques, la mise en place et la maintenance des réseaux,
-                             la sécurité des systèmes d'information, et l'administration des serveurs. Parmi les métiers qui leur sont accessibles nous pouvons citer :</p>
-                            
-                            <ul > <li>Technicien de production</li>
-                                <li>Technicien réseau</li>
-                                <li>Administrateur systèmes et réseaux</li>
-                            </ul>
-                    
-                        <h3 >Option SLAM (Solutions Logicielles et Applications Métiers)</h3>
-                        <p>Cette option se concentre sur le développement d'applications informatiques, la programmation, la conception de bases de données, et la gestion de projets informatiques. <br> eux aussi peuvent prétendre à plusieurs postes comme :</p>
-                        <ul >
-                            <li>Technicien de production</li>
-                            <li>Programmeur</li>
-                            <li>Analyste programmeur</li>
-                            <li>Technicien d'études informatiques</li>
-                            <li>Informaticien d'études</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- BTS SIO Start -->
+<div class="bts" id="bts-sio">
+    <div class="container">
+        <div class="section-header text-center">
+            <p class="bts-intro">BTS SIO</p>
+            <div class="BtsSIO ftco-animate">
+                <h1>Qu'est-ce que le BTS SIO?</h1>
+                <p class="text-white">
+                    Le BTS SIO (Services Informatiques aux Organisations) prépare les étudiants à 
+                    travailler dans le domaine de l'informatique au sein des organisations et des entreprises et comprend 2 options :
+                </p>
+
+                <h3>Option SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</h3>
+                <p class="text-white">
+                    Cette option se concentre sur la gestion des infrastructures informatiques, la mise en place et la maintenance des réseaux,
+                    la sécurité des systèmes d'information, et l'administration des serveurs. Parmi les métiers accessibles :
+                </p>
+                <ul>
+                    <li>Technicien de production</li>
+                    <li>Technicien réseau</li>
+                    <li>Administrateur systèmes et réseaux</li>
+                </ul>
+
+                <h3>Option SLAM (Solutions Logicielles et Applications Métiers)</h3>
+                <p class="text-white">
+                    Cette option se concentre sur le développement d'applications informatiques, la programmation, la conception de bases de données, et la gestion de projets informatiques.  
+                    Ils peuvent prétendre à plusieurs postes comme :
+                </p>
+                <ul>
+                    <li>Technicien de production</li>
+                    <li>Programmeur</li>
+                    <li>Analyste programmeur</li>
+                    <li>Technicien d'études informatiques</li>
+                    <li>Informaticien d'études</li>
+                </ul>
             </div>
         </div>
-        <!-- Service End -->
+    </div>
+</div>
+<!-- BTS SIO End -->
+
         
-        
-         <!-- Experience Start -->
-        <div class="experience" id="experience">
+         <!-- Parcours Start -->
+        <div class="parcours" id="parcours">
             <div class="container">
                 <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>Mon parcours</p>
@@ -244,17 +272,17 @@
                 </div>
             </div>
         </div>
-        <!-- Job Experience End -->
+        <!-- Parcours End -->
         
         
         <!-- Compétences start-->
-        <section class="ftco-section" id="skills-section">
+        <section class="ftco-section" id="competences">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>Mes compétences</p>
                 </div>
-                <div class="row skill">
-                    <div class="col-md-6 animate-box cube services-1"onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                <div class="row skill justify-content-center">
+                    <div class="col-md-4 animate-box cube services-1"onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate " >
                             <span class="icon-skill">💻</span>
                             <h3 style="text-align: center;">JAVASCRIPT | TYPESCRIPT </h3>	
@@ -270,7 +298,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                    <div class="col-md-4 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate" >
                             <span class="icon-skill">☕</span>
                             <h3>JAVA | KOTLIN</h3>
@@ -284,7 +312,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 animate-box cube services-1"onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                    <div class="col-md-4 animate-box cube services-1"onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate" >
                             <span class="icon-skill">🐍</span>
                             <h3>PYTHON</h3>
@@ -298,7 +326,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                    <div class="col-md-4 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate" >
                             <span class="icon-skill">🐘</span>
                             <h3>PHP</h3>
@@ -312,7 +340,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-6 animate-box cube services-1  " onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                    <div class="col-md-4 animate-box cube services-1  " onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate" >
                             <span class="icon-skill">🎨</span>
                             <h3>HTML | CSS</h3>
@@ -322,7 +350,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
+                    <div class="col-md-4 animate-box cube services-1" onmouseenter="changerCouleur()" onmouseleave="revenirCouleur()">
                         <div class="progress-wrap ftco-animate" >
                             <span class="icon-skill">🗄️</span>
                             <h3>SQL</h3>
@@ -337,7 +365,7 @@
             </div>
         </section>
         <!-- Section Mes Outils / Logiciels -->
-        <section class="tools-section" id="tools-section">
+        <section class="tools-section" id="outils">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>Mes outils / logiciels</p>
@@ -366,38 +394,10 @@
             </div>
         </section>
 
-        <script>
-            // Fonction pour changer la couleur au survol
-            function changerCouleur() {
-              document.getElementById("monElement1").style.color = "white";
-              document.getElementById("monElement2").style.color = "white";
-              document.getElementById("monElement3").style.color = "white";
-              document.getElementById("monElement4").style.color = "white";
-              document.getElementById("monElement5").style.color = "white";
-              document.getElementById("monElement6").style.color = "white";
-              document.getElementById("monElement7").style.color = "white";
-
-
-
-            }
-          
-            // Fonction pour revenir à la couleur initiale
-            function revenirCouleur() {
-              document.getElementById("monElement1").style.color = "#ffbd39";
-              document.getElementById("monElement2").style.color = "#ffbd39";
-              document.getElementById("monElement3").style.color = "#ffbd39";
-              document.getElementById("monElement4").style.color = "#ffbd39";
-              document.getElementById("monElement5").style.color = "#ffbd39";
-              document.getElementById("monElement6").style.color = "#ffbd39";
-              document.getElementById("monElement7").style.color = "#ffbd39";
-
-
-            }
-          </script>
 
 
         <!-- Portfolio Start -->
-        <div class="portfolio" id="portfolio">
+        <div class="portfolio" id="projets">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
                     <p>Mes projets </p>
@@ -437,17 +437,17 @@
         <!-- Portfolio End -->
         
         
-        <!-- Testimonial Start -->
-        <div class="testimonial" id="testimonial">
+        <!-- Veille technologique Start -->
+        <div class="veille" id="veille-technologique">
             <div class="container">
                 <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                    <p style="font-family: 'Montserrat', 'sans-serif' !important; color: #797979 !important; background: #fff !important; font-size: 20px !important;">Veille Technologique</p>
+                    <p>Veille Technologique</p>
                 </div>
                 <div class="cloud-content">
                     <h2>Développement d'Applications dans le Cloud</h2>
                     <div class="cloud-intro">
                         <h3>Introduction</h3>
-                        <p>Le cloud computing est devenu un pilier du développement d'applications modernes. Il permet de bénéficier de ressources à la demande, d'une grande flexibilité et de coûts réduits. Les plateformes leaders comme AWS, Azure et GCP offrent des services puissants pour les développeurs.</p>
+                        <p class="text-white">Le cloud computing est devenu un pilier du développement d'applications modernes. Il permet de bénéficier de ressources à la demande, d'une grande flexibilité et de coûts réduits. Les plateformes leaders comme AWS, Azure et GCP offrent des services puissants pour les développeurs.</p>
                     </div>
 
                     <div class="cloud-models">
@@ -566,7 +566,7 @@
                 </div>
             </div>
         </div>
-        <!-- Testimonial End -->
+        <!-- Veille technologique End -->
 
 
         <!-- Contact Start -->
@@ -583,33 +583,26 @@
                                     <div class="contact-icon"><i class="fa fa-envelope"></i></div>
                                     <p class="sous-titre">Je vous répondrai rapidement !</p>
                                     <div id="success"></div>
-                                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                                    <form id="contactForm" action="https://formspree.io/f/xdklvorr" method="POST">
                                         <div class="control-group">
                                             <span class="input-icon"><i class="fa fa-user"></i></span>
-                                            <input type="text" class="form-control" id="name" placeholder="Votre nom" required="required" data-validation-required-message="Veuillez entrer votre nom" />
-                                            <p class="help-block"></p>
+                                            <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
                                         </div>
                                         <div class="control-group">
                                             <span class="input-icon"><i class="fa fa-envelope"></i></span>
-                                            <input type="email" class="form-control" id="email" placeholder="Votre email" required="required" data-validation-required-message="Veuillez entrer votre email" />
-                                            <p class="help-block"></p>
+                                            <input type="email" name="email" class="form-control" placeholder="Votre email" required>
                                         </div>
                                         <div class="control-group">
                                             <span class="input-icon"><i class="fa fa-tag"></i></span>
-                                            <input type="text" class="form-control" id="subject" placeholder="Sujet" required="required" data-validation-required-message="Veuillez entrer un sujet" />
-                                            <p class="help-block"></p>
+                                            <input type="text" name="subject" class="form-control" placeholder="Sujet" required>
                                         </div>
                                         <div class="control-group">
                                             <span class="input-icon"><i class="fa fa-comment"></i></span>
-                                            <textarea class="form-control" id="message" placeholder="Message" required="required" data-validation-required-message="Veuillez entrer votre message"></textarea>
-                                            <p class="help-block"></p>
+                                            <textarea name="message" class="form-control" placeholder="Message" required></textarea>
                                         </div>
-                                        <div>
-                                            <button class="btn" type="submit" id="sendMessageButton">
-                                                <span>Envoyer le message</span> <i class="fa fa-paper-plane"></i>
-                                            </button>
-                                        </div>
+                                        <button class="btn" type="submit">Envoyer le message <i class="fa fa-paper-plane"></i></button>
                                     </form>
+
                                 </div>
                             </div>
                         </div>
@@ -652,74 +645,21 @@
         <script src="lib/wow/wow.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <!-- Owl Carousel JS via CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
-
+        
         <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+        <script src="JS/main.js"></script>
 
         <style> 
-            .section-header {
-                text-align: center;
-                padding: 60px 20px 20px;
-            }
-            .section-header p {
-                font-size: 18px;
-                color: #444;
-                margin-bottom: 10px;
-            }
-            .BtsSIO {
-                width: 80%;
-                background-color:#a35536;
-                color: white;
-                margin: 0 auto 40px;
-                padding: 40px 30px;
-                border-radius: 12px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            }
-            .BtsSIO h1 {
-                font-size: 30px;
-                margin-bottom: 20px;
-                color: beige;
-            }
-            .BtsSIO h3 {
-                font-size: 20px;
-                margin-top: 30px;
-                margin-bottom: 10px;
-                color: #ffd28a;
-            }
-            .BtsSIO p {
-                font-size: 16px;
-                line-height: 1.6;
-                margin-bottom: 6px;
-                text-transform: none;
-                margin-top: 10px;
-            }
-            .BtsSIO ul {
-                text-align: left;
-                padding-left: 20px;
-                margin-bottom: 20px;
-            }
-            .BtsSIO ul li {
-                margin-bottom: 6px;
-            }
-            @media (max-width: 768px) {
-                .BtsSIO {
-                    width: 95%;
-                    padding: 25px 15px;
-                }
-                .BtsSIO h1 {
-                    font-size: 24px;
-                }
-                .BtsSIO h3 {
-                    font-size: 18px;
-                }
-            }
+           
         </style>
 
        

@@ -49,11 +49,26 @@
                 scrollTop: $(this.hash).offset().top - 45
             }, 1500, 'easeInOutExpo');
             
-            if ($(this).parents('.navbar-nav').length) {
-                $('.navbar-nav .active').removeClass('active');
-                $(this).closest('a').addClass('active');
-            }
+            // Remove active class from all nav links
+            $('.navbar-nav .nav-link').removeClass('active');
+            // Add active class to clicked link
+            $(this).addClass('active');
         }
+    });
+    
+    // Update active nav link on scroll
+    $(window).scroll(function() {
+        var scrollPos = $(document).scrollTop() + 100;
+        
+        $('.navbar-nav .nav-link').each(function() {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            
+            if (refElement.length && refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                $('.navbar-nav .nav-link').removeClass('active');
+                currLink.addClass('active');
+            }
+        });
     });
     
     
@@ -69,13 +84,23 @@
         });
     }
     
-    
-    // Skills
-    $('.skills').waypoint(function () {
-        $('.progress .progress-bar').each(function () {
-            $(this).css("width", $(this).attr("aria-valuenow") + '%');
-        });
-    }, {offset: '80%'});
+ // Skills   
+$(document).ready(function() {
+    // Déclenche quand la section .skills est visible
+    $('.skills').waypoint(function(direction) {
+        if(direction === 'down') { // seulement quand on descend
+            // cible uniquement les barres à l'intérieur de cette section
+            $(this.element).find('.progress-bar').each(function() {
+                var val = $(this).attr('aria-valuenow');
+                $(this).css('width', val + '%');
+            });
+            this.destroy(); // pour ne pas répéter l'animation
+        }
+    }, { offset: '80%' });
+});
+
+
+
 
 
     // Testimonials carousel
@@ -106,3 +131,48 @@
     });
     
 })(jQuery);
+
+// Fonctions pour changer la couleur au survol des compétences
+function changerCouleur() {
+    // Trouver l'élément survolé et changer la couleur de ses enfants
+    var hoveredElement = event.currentTarget;
+    var h3Element = hoveredElement.querySelector('h3');
+    var iconElement = hoveredElement.querySelector('.icon-skill');
+    var listItems = hoveredElement.querySelectorAll('li');
+    
+    if (h3Element) {
+        h3Element.style.color = "white";
+    }
+    if (iconElement) {
+        iconElement.style.color = "white";
+    }
+    listItems.forEach(function(li) {
+        li.style.color = "white";
+    });
+}
+
+function revenirCouleur() {
+    // Revenir à la couleur initiale pour l'élément qui n'est plus survolé
+    var hoveredElement = event.currentTarget;
+    var h3Element = hoveredElement.querySelector('h3');
+    var iconElement = hoveredElement.querySelector('.icon-skill');
+    var listItems = hoveredElement.querySelectorAll('li');
+    
+    if (h3Element) {
+        h3Element.style.color = "#a35536";
+    }
+    if (iconElement) {
+        iconElement.style.color = "#a35536";
+    }
+    listItems.forEach(function(li) {
+        li.style.color = "#444";
+    });
+}
+// contact form
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    setTimeout(() => {
+        alert('Message envoyé !');
+        this.reset();
+    }, 100); // léger délai pour que l'envoi se fasse
+});
+
