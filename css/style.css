@@ -357,13 +357,14 @@ p {
 
 .hero .hero-content {
     position: relative;
-    padding-left: 50px;
+    padding-left: 20px;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     z-index: 1;
-    max-width: 40%;
+    max-width: 100%;
+    
 }
 
 .hero .hero-text p {
@@ -469,46 +470,65 @@ p {
         gap: 0 !important;
     }
 }
-
 @media (max-width: 767.98px) {
     .hero {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 40px;
+        padding-bottom: 20px;
     }
-    
+
+    .hero .row {
+        flex-direction: column; /* empilement vertical */
+        min-height: auto;
+    }
+
+    /* Neutraliser marges Bootstrap des colonnes */
+    .hero .row > div {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .hero .row > div:nth-child(2) {
+        order: -1; /* image avant le texte */
+    }
+
     .hero .hero-image {
         height: auto;
+        margin-bottom: 10px; /* espace contrôlé entre image et texte */
+        justify-content: center;
+        padding-right: 0;
     }
-    
+
     .hero .hero-content {
-        padding: 20px 15px;
+        padding: 10px 15px;
+        margin-top: 0 !important;
     }
-    
+
     .hero,
     .hero .hero-text,
     .hero .hero-btn {
         width: 100%;
         text-align: center;
     }
-    
+
     .hero .hero-text p {
         font-size: 18px;
     }
-    
+
     .hero .hero-text h1 {
         font-size: 35px;
     }
-    
+
     .hero .hero-text h2 {
         font-size: 22px;
         height: 22px;
     }
-    
+
     .hero .hero-btn .btn {
         padding: 10px 15px;
         letter-spacing: 1px;
     }
 }
+
 
 @media (max-width: 575.98px) {
     .hero .hero-text p {
@@ -615,6 +635,30 @@ p {
         padding: 45px 15px 0 15px;
     }
 }
+@media (max-width: 767.98px) {
+    .about {
+        margin: 20px 0 45px 0; /* plus d’espace avec le container au-dessus */
+    }
+
+    .about .about-img {
+        height: auto; /* pas de stretch vertical */
+        text-align: center; /* centre l’image */
+        padding-top: 20px; /* espace du haut */
+    }
+
+    .about .about-img img {
+        width: 90%; /* réduit la largeur sur mobile */
+        height: auto; /* garde les proportions */
+        object-fit: cover;
+        border-radius: 16px;
+        display: inline-block; /* pour que le centrage fonctionne */
+    }
+
+    .about .about-content {
+        padding: 20px 15px; /* réduit padding sur mobile */
+    }
+}
+
 
 
 /*******************************/
@@ -1165,6 +1209,36 @@ p {
         grid-template-columns: 1fr;
     }
 }
+@media (max-width: 767.98px) {
+    .veille {
+        width: 100%; /* prend toute la largeur de l’écran */
+        padding: 20px 15px; /* espace suffisant top/bottom */
+        margin: 0 auto;
+    }
+
+    .cloud-content {
+        padding: 30px 20px; /* réduit padding sur mobile */
+        margin-bottom: 30px; /* espace entre les cards */
+    }
+
+    .models-grid,
+    .providers-grid,
+    .use-cases-grid,
+    .benefits-grid,
+    .trends-grid {
+        gap: 20px; /* réduit l’écart entre les cards */
+        padding: 0 5px; /* petit padding sur les côtés */
+    }
+
+    .model-card,
+    .provider-card,
+    .use-case-card,
+    .benefit-item,
+    .trend-card {
+        padding: 20px 15px; /* réduit padding interne */
+    }
+}
+
 
 
 /*******************************/
@@ -1422,6 +1496,35 @@ p {
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
+    }
+}
+@media (max-width: 767.98px) {
+    .footer .container-fluid {
+        padding: 40px 15px; /* padding top/bottom + responsive */
+    }
+
+    .footer .footer-info h2 {
+        font-size: 20px;
+    }
+
+    .footer .footer-info h3 {
+        font-size: 16px;
+    }
+
+    .footer .footer-menu {
+        flex-direction: column; /* empile les items sur mobile */
+        gap: 10px;
+    }
+
+    .footer .footer-menu p {
+        font-size: 16px;
+        line-height: 18px;
+        border-right: none; /* supprime la bordure verticale sur mobile */
+    }
+
+    .footer .copyright {
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 }
 
@@ -1704,20 +1807,35 @@ p {
     font-size: 18px;
     color: #fff;
 }
-
-@media (max-width: 991.98px) {
+@media (max-width:  767.98px) {
     .contact-bg {
         flex-direction: column;
-        max-width: 98vw;
-        padding: 16px 4vw;
-        gap: 18px;
+        max-width: 100%; /* occupe toute la largeur */
+        padding: 20px 10px; /* espace suffisant autour */
+        gap: 20px;
     }
+
     .contact-form {
+        width: 100%;
         max-width: 100%;
+        margin-top: 10px; /* espace depuis la section précédente */
+        padding: 20px 15px; /* padding intérieur pour mobile */
+        box-sizing: border-box;
     }
+
     .contact-infos {
+        width: 100%;
         padding-left: 0;
         align-items: center;
         font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .contact-form textarea.form-control {
+        min-height: 120px; /* plus visible sur mobile */
+    }
+
+    .contact-form .btn {
+        padding: 12px 0; /* boutons plus confortables */
     }
 }
