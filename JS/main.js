@@ -168,6 +168,18 @@ function revenirCouleur() {
         li.style.color = "#444";
     });
 }
+function filtrer(categorie) {
+    var items = document.querySelectorAll('.skill-item');
+    items.forEach(function(item) {
+        if (categorie === "all") {
+            item.style.display = "block";
+        } else if (item.classList.contains(categorie)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}   
 // contact form
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     setTimeout(() => {
@@ -175,4 +187,5 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         this.reset();
     }, 100); // léger délai pour que l'envoi se fasse
 });
+
 

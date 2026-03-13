@@ -11,7 +11,14 @@ body {
     margin: 0;
     padding: 0;
 }
-
+.skill-logo {
+    width: 60px;        /* largeur fixe pour tous */
+    height: 60px;       /* hauteur fixe pour tous */
+    object-fit: contain; /* garde les proportions sans étirer */
+    display: block;
+    margin: 0 auto 10px auto; /* centre horizontalement et ajoute un espace en bas */
+    border-radius: 5px;     /* optionnel : coins arrondis pour uniformité */
+}
 /* Titres */
 h1, h2, h3, h4, h5, h6 {
     color: #333; /* légèrement plus foncé pour un meilleur contraste */
@@ -1023,224 +1030,196 @@ p {
     font-size: 20px;
     font-weight: 200;
 }
-
-.cloud-content {
-    width: 100%;
-    background:linear-gradient(45deg, #8a280a, #8b4e3c, #7c3a19);
-    color: white;
-    margin: 0 auto 40px;
-    padding: 40px 50px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+/* Veille Technologique */
+.veille {
+    padding: 60px 0;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
 }
 
-.cloud-content h2 {
-    margin: 0 0 40px 0;
-    position: relative;
-    font-size: 30px;
-    font-weight: 500;
-    color: #ffffff;
-    text-align: center;
+.veille .section-header {
+    margin-bottom: 50px;
 }
 
-.cloud-content h3 {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: beige;
-    text-align: center;
-}
-
-.cloud-intro {
-    text-align: center;
-    max-width: 100%;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-}
-
-.cloud-intro p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 6px;
-    text-transform: none;
-    margin-top: 10px;
-}
-
-.cloud-models h3,
-.cloud-providers h3,
-.cloud-use-cases h3,
-.cloud-benefits h3,
-.cloud-trends h3 {
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: #ffd28a;
-    text-align: center;
-}
-
-.models-grid, .providers-grid, .use-cases-grid, .benefits-grid, .trends-grid {
-    display: grid;
-    gap: 30px;
-    margin-bottom: 60px;
-    width: 100%;
-    padding: 0;
-}
-
-.models-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.providers-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.use-cases-grid {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.benefits-grid {
-    grid-template-columns: repeat(5, 1fr);
-}
-
-.trends-grid {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.model-card, .provider-card, .use-case-card, .benefit-item, .trend-card {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px 20px;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.model-card:hover, .provider-card:hover, .use-case-card:hover, .benefit-item:hover, .trend-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.2);
-}
-
-.model-card h4, .provider-card h4 {
-    color: #ffffff;
+.veille .section-header p {
+    color: #a35536;
+    font-weight: 600;
     font-size: 18px;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.provider-name {
-    font-size: 16px;
     margin-bottom: 10px;
-    color: #ffffff;
-    text-align: center;
+    text-transform: uppercase;
 }
 
-.provider-desc {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.model-card ul {
-    text-align: left;
-    padding-left: 20px;
-    margin-bottom: 20px;
-    list-style: none;
-    flex-grow: 1;
-}
-
-.model-card ul li {
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-}
-
-.use-case-card, .benefit-item, .trend-card {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.use-case-card i, .benefit-item i, .trend-card i {
-    font-size: 30px;
-    margin-bottom: 15px;
-    color: #ffffff;
-}
-
-.use-case-card p, .benefit-item p, .trend-card p {
+.veille .section-header h2 {
+    color: #000000;
+    font-size: 36px;
+    font-weight: 700;
     margin: 0;
+}
+
+/* Introduction */
+.veille-intro p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Section générale */
+.veille-section {
+    margin-bottom: 40px;
+}
+
+.veille-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.veille-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 0 15px;
+    color: #000000;
+}
+
+.veille-header .veille-period {
+    margin-left: auto;
+    font-size: 16px;
+    color: #a35536;
+    font-weight: 500;
+}
+
+/* Icônes */
+.veille-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+}
+
+.veille-icon.past { background-color: #444; }
+.veille-icon.present { background-color: #a35536; }
+.veille-icon.future { background-color: #f39c12; }
+.veille-icon.impact { background-color: #3498db; }
+.veille-icon.news { background-color: #16a085; }
+.veille-icon.source { background-color: #9b59b6; }
+
+/* Détails des milestones */
+.veille-details {
+    padding-left: 65px;
+    position: relative;
+}
+
+.veille-details::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #444;
+    border-radius: 2px;
+}
+
+.veille-milestone {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.veille-milestone h4 {
+    font-size: 18px;
+    color: #a35536;
+    margin-bottom: 5px;
+}
+
+.veille-milestone p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Applications Grid */
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.application-item h4 {
+    color: #a35536;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.application-item p {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    flex-grow: 1;
+    line-height: 1.5;
 }
 
-@media (max-width: 1200px) {
-    .benefits-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .trends-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* Future Predictions */
+.future-predictions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-@media (max-width: 992px) {
-    .models-grid,
-    .providers-grid,
-    .use-cases-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .benefits-grid,
-    .trends-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.prediction-item {
+    padding-left: 10px;
+    border-left: 3px solid #f39c12;
 }
 
-@media (max-width: 576px) {
-    .models-grid,
-    .providers-grid,
-    .use-cases-grid,
-    .benefits-grid,
-    .trends-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (max-width: 767.98px) {
-    .veille {
-        width: 100%; /* prend toute la largeur de l’écran */
-        padding: 20px 15px; /* espace suffisant top/bottom */
-        margin: 0 auto;
-    }
-
-    .cloud-content {
-        padding: 30px 20px; /* réduit padding sur mobile */
-        margin-bottom: 30px; /* espace entre les cards */
-    }
-
-    .models-grid,
-    .providers-grid,
-    .use-cases-grid,
-    .benefits-grid,
-    .trends-grid {
-        gap: 20px; /* réduit l’écart entre les cards */
-        padding: 0 5px; /* petit padding sur les côtés */
-    }
-
-    .model-card,
-    .provider-card,
-    .use-case-card,
-    .benefit-item,
-    .trend-card {
-        padding: 20px 15px; /* réduit padding interne */
-    }
+.prediction-year {
+    font-weight: 600;
+    color: #a35536;
+    margin-bottom: 5px;
 }
 
+.prediction-content h4 {
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 3px;
+}
 
+.prediction-content p {
+    font-size: 14px;
+    line-height: 1.5;
+}
 
+/* Articles */
+#veille-articles li {
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* Sources */
+.veille-sources {
+    list-style: disc;
+    padding-left: 20px;
+    font-size: 15px;
+}
+
+.veille-sources li {
+    margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .veille-details {
+        padding-left: 40px;
+    }
+
+    .veille-header h3 {
+        font-size: 20px;
+    }
+
+    .veille-header .veille-period {
+        font-size: 14px;
+    }
+}
 /*******************************/
 /********* Contact CSS *********/
 /*******************************/
