@@ -180,6 +180,7 @@ function filtrer(categorie) {
         }
     });
 }   
+
 // contact form
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     setTimeout(() => {
