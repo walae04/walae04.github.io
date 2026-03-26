@@ -38,7 +38,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-    color: #a35536; /* couleur accent */
+    color: #152db3; /* couleur accent */
     outline: none;
     text-decoration: underline; /* indique le survol */
     transform: translateY(-2px); /* léger effet “hover” */
@@ -71,20 +71,20 @@ p {
     font-weight: 600;
     letter-spacing: 1px;
     color: #ffffff;
-    background:#a35536;
+    background:#152db3;
     border: 2px solid transparent;
     border-radius: 0;
-    box-shadow: inset 0 0 0 50px#a35536;
+    box-shadow: inset 0 0 0 50px#152db3;
     transition: ease-out 0.3s;
     -webkit-transition: ease-out 0.3s;
     -moz-transition: ease-out 0.3s;
 }
 
 .btn:hover {
-    color:#a35536;
+    color:#152db3;
     background: transparent;
-    box-shadow: inset 0 0 0 0#a35536;
-    border-color: #a35536;
+    box-shadow: inset 0 0 0 0#152db3;
+    border-color: #152db3;
 }
 #loader {
     position: fixed;
@@ -117,7 +117,7 @@ p {
     width: 45px;
     height: 45px;
     border: 5px solid #dddddd;
-    border-top: 5px solid #a35536;
+    border-top: 5px solid #152db3;
     border-radius: 50%;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
@@ -185,7 +185,7 @@ p {
     transition: color 0.3s ease;
   }
   .navbar.nav-sticky .navbar-brand {
-    color: #a35536;
+    color: #152db3;
   }
 
   /* Liens */
@@ -215,7 +215,7 @@ p {
     color: #ffffff;
   }
   .navbar-light.nav-sticky .navbar-nav .nav-link:hover {
-    color: #a35536;
+    color: #152db3;
   }
 
   /* Barre sous le lien */
@@ -237,7 +237,7 @@ p {
 
   /* Version sticky (barre en couleur) */
   .navbar-light.nav-sticky .navbar-nav .nav-link::after {
-    background-color: #a35536;
+    background-color: #152db3;
   }
 }
 
@@ -249,7 +249,7 @@ p {
   }
 
   .navbar .navbar-brand {
-    color: #a35536;
+    color: #152db3;
   }
 
   .navbar .navbar-nav {
@@ -284,7 +284,7 @@ p {
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background-color: #a35536;
+    background-color: #152db3;
     border-radius: 1px;
     transition: width 0.25s ease;
   }
@@ -307,7 +307,7 @@ p {
     margin-bottom: 45px;
     padding: 120px 0 0 0;
     overflow: hidden;
-    background: linear-gradient(45deg, #8a280a, #a56a59, #c75014);
+    background: linear-gradient(45deg, #0c1858, #2e66ff, #042274);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -343,11 +343,6 @@ p {
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-/* Effet au survol */
-.hero .hero-image:hover img {
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 12px 36px rgba(0,0,0,0.25);
-}
 
 /* Responsive pour petits écrans */
 @media (max-width: 767px) {
@@ -627,7 +622,7 @@ p {
 
 .about .progress .progress-bar {
     width: 0px;
-    background: #a35536;
+    background: #152db3;
     border-radius: 10px;
     transition: width 1.5s ease-in-out;
 
@@ -667,7 +662,22 @@ p {
 }
 
 
+.cv {
+  padding: 60px 0;
 
+  color: white;
+}
+
+.cv-image {
+  margin-top: 30px;
+}
+
+.cv-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
 /*******************************/
 /******* parcours CSS ********/
 /*******************************/
@@ -685,7 +695,7 @@ p {
     content: '';
     position: absolute;
     width: 2px;
-    background: #a35536;
+    background: #152db3;
     top: 0;
     bottom: 0;
     left: 50%;
@@ -717,7 +727,7 @@ p {
     top: 48px;
     right: -8px;
     background: #ffffff;
-    border: 2px solid #a35536;
+    border: 2px solid #152db3;
     border-radius: 16px;
     z-index: 1;
 }
@@ -749,7 +759,7 @@ p {
     top: 44px;
     font-size: 16px;
     font-weight: 600;
-    color: #a35536;
+    color: #152db3;
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 1;
@@ -854,7 +864,7 @@ p {
     padding: 35px 30px;
     height: 100%;
     box-shadow: 0 4px 20px rgba(163, 85, 54, 0.1);
-    border-top: 4px solid #a35536;
+    border-top: 4px solid #152db3;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 30px;
   }
@@ -866,7 +876,7 @@ p {
   
   .stage-year {
     display: inline-block;
-    background: #a35536;
+    background: #152db3;
     color: #fff;
     font-size: 0.85rem;
     font-weight: 600;
@@ -885,7 +895,7 @@ p {
   
   .stage-card h4 {
     font-size: 0.95rem;
-    color: #a35536;
+    color: #152db3;
     font-weight: 500;
     margin-bottom: 14px;
   }
@@ -898,7 +908,7 @@ p {
   }
   
   .btn-stage {
-    background: #a35536;
+    background: #152db3;
     color: #fff;
     border-radius: 6px;
     padding: 9px 20px;
@@ -909,7 +919,7 @@ p {
   }
   
   .btn-stage:hover {
-    background: #7d3f27;
+    background: #152db3;
     color: #fff;
   }
 
@@ -929,7 +939,7 @@ p {
             }
             .BtsSIO {
                 width: 80%;
-                background:linear-gradient(45deg, #8a280a, #8b4e3c, #53260f);
+                background:linear-gradient(45deg, #0c1858, #2e66ff, #042274);
                 color: white;
                 margin: 0 auto 40px;
                 padding: 40px 30px;
@@ -1028,7 +1038,7 @@ p {
 .projet-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(163,85,54,0.80);
+  background: #152db3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1042,7 +1052,7 @@ p {
  
 .btn-overlay {
   background: #fff;
-  color: #a35536;
+  color: #152db3;
   border: none;
   border-radius: 8px;
   padding: 10px 22px;
@@ -1054,7 +1064,7 @@ p {
  
 .btn-overlay:hover {
   background: #f5f0ec;
-  color: #a35536;
+  color: #152db3;
 }
  
 .projet-body {
@@ -1091,8 +1101,8 @@ p {
   letter-spacing: 0.3px;
 }
  
-.tag-js     { background:#fef3c7; color:#92400e; }
-.tag-html   { background:#ffedd5; color:#9a3412; }
+.tag-js     { background:#fef3c7; color:#152db3; }
+.tag-html   { background:#ffedd5; color:#14129a; }
 .tag-php    { background:#ede9fe; color:#5b21b6; }
 .tag-python { background:#d1fae5; color:#065f46; }
 .tag-kotlin { background:#dbeafe; color:#1e40af; }
@@ -1109,7 +1119,7 @@ p {
 }
  
 .btn-projet-detail {
-  background: #a35536;
+  background: #152db3;
   color: #fff;
   border: none;
   border-radius: 7px;
@@ -1124,7 +1134,7 @@ p {
 }
  
 .btn-projet-detail:hover {
-  background: #7d3f27;
+  background: #152db3;
   color: #fff;
 }
  
@@ -1153,7 +1163,7 @@ p {
 .modal-badge {
   display: inline-block;
   background: #fef3c7;
-  color: #92400e;
+  color: #152db3;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 3px 12px;
@@ -1169,7 +1179,7 @@ p {
 .modal-section-title {
   font-weight: 700;
   font-size: 0.92rem;
-  color: #a35536;
+  color: #152db3;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 10px;
@@ -1186,7 +1196,7 @@ p {
  
 .modal-tech-item {
   background: #f5f0ec;
-  color: #a35536;
+  color: #152db3;
   border: 1px solid rgba(163,85,54,0.2);
   border-radius: 8px;
   padding: 6px 14px;
@@ -1220,7 +1230,7 @@ p {
   content: "→";
   position: absolute;
   left: 0;
-  color: #a35536;
+  color: #152db3;
   font-weight: bold;
 }
 /*******************************/
@@ -1241,11 +1251,10 @@ p {
     font-weight: 200;
 }
 
-.veille .section-header p { color: #a35536; }
+.veille .section-header p { color: #152db3;  }
 
- 
 .veille-intro-text {
-  color: #888;
+  color: #d4d4d4;
   font-size: 0.95rem;
   max-width: 580px;
   margin: 0 auto 40px;
@@ -1254,7 +1263,7 @@ p {
  
 /* Cards */
 .veille-card {
-  background: #1a1a1a;
+  background: linear-gradient(45deg, #0c1858, #2e66ff, #042274);
   border: 1px solid #252525;
   border-radius: 12px;
   padding: 24px 28px;
@@ -1270,8 +1279,8 @@ p {
  
 .veille-card-header i {
   width: 36px; height: 36px;
-  background: rgba(163,85,54,0.15);
-  color: #a35536;
+  background: rgba(41, 33, 151, 0.534);
+  color: #566ffd;
   border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.9rem;
@@ -1286,7 +1295,7 @@ p {
 }
  
 .veille-card p {
-  color: #999;
+  color: #e7e7e7;
   font-size: 0.88rem;
   line-height: 1.75;
   margin-bottom: 10px;
@@ -1308,7 +1317,7 @@ p {
 }
  
 .veille-tech-item {
-  background: #222;
+  background: #dddddd;
   border-radius: 8px;
   padding: 12px 14px;
   display: flex;
@@ -1319,14 +1328,14 @@ p {
 .vtech-label {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #a35536;
+  color: #152db3;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
  
 .vtech-detail {
   font-size: 0.8rem;
-  color: #888;
+  color: #414141;
   line-height: 1.5;
 }
  
@@ -1345,7 +1354,7 @@ p {
 }
  
 .veille-enjeu > i {
-  color: #a35536;
+  color: #152db3;
   font-size: 0.95rem;
   margin-top: 3px;
   flex-shrink: 0;
@@ -1354,7 +1363,7 @@ p {
  
 .veille-enjeu div { display: flex; flex-direction: column; gap: 3px; }
 .veille-enjeu strong { font-size: 0.88rem; color: #e0dbd4; }
-.veille-enjeu p { font-size: 0.83rem; color: #888; margin: 0; line-height: 1.6; }
+.veille-enjeu p { font-size: 0.83rem; color: #e6e6e6; margin: 0; line-height: 1.6; }
  
 /* Sources */
 .veille-sources-row {
@@ -1364,7 +1373,7 @@ p {
   gap: 10px;
   margin-top: 6px;
   padding: 16px 20px;
-  background: #1a1a1a;
+  background: linear-gradient(45deg, #0c1858, #2e66ff, #042274);
   border: 1px solid #252525;
   border-radius: 10px;
 }
@@ -1372,7 +1381,7 @@ p {
 .veille-sources-row span {
   font-size: 0.78rem;
   font-weight: 700;
-  color: #666;
+  color: #d4d4d4;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   margin-right: 4px;
@@ -1380,9 +1389,9 @@ p {
  
 .veille-sources-row a {
   font-size: 0.78rem;
-  color: #a35536;
+  color: #d2d6ee;
   text-decoration: none;
-  border: 1px solid rgba(163,85,54,0.25);
+  border: 1px solid rgba(54, 70, 163, 0.25);
   padding: 4px 10px;
   border-radius: 20px;
   transition: background 0.2s;
@@ -1419,7 +1428,7 @@ p {
     display: inline-block;
     width: 40px;
     height: 3px;
-    background-color: #a35536;
+    background-color: #152db3;
     margin-right: 12px;
     transition: none;
     opacity: 1;
@@ -1432,7 +1441,7 @@ p {
 
 
 .contact-bg {
-   background:linear-gradient(45deg, #8a280a, #8b4e3c, #53260f);
+   background:linear-gradient(45deg,#0c1858, #2e66ff, #042274 );
     border-radius: 22px;
     box-shadow: 0 4px 24px rgba(163,85,54,0.10), 0 1.5px 6px rgba(0,0,0,0.04);
     width: 80%;
@@ -1488,12 +1497,12 @@ p {
 }
 .contact-bg .contact-form input::placeholder,
 .contact-bg .contact-form textarea::placeholder {
-    color: #a35536 !important;
+    color: #152db3 !important;
     opacity: 1 !important;
 }
 .contact-bg .contact-form .btn {
     width: 100% !important;
-    background: #a35536 !important;
+    background: #152db3 !important;
     color: #fff !important;
     font-weight: 700 !important;
     font-size: 15px !important;
@@ -1506,7 +1515,7 @@ p {
     border: none !important;
 }
 .contact-bg .contact-form .btn:hover {
-    background: #7a2e13 !important;
+    background: #152db3 !important;
     transform: translateY(-1px) scale(1.01) !important;
     color: #fff !important;
 }
@@ -1538,7 +1547,7 @@ p {
 .footer {
     position: relative;
     margin-top: 45px;
-    background: linear-gradient(45deg, #8a280a, #fdb29e, #ffd1b9);
+    background: linear-gradient(45deg, #0c1858, #2e66ff, #042274);
 }
 
 .footer .container-fluid {
@@ -1700,7 +1709,7 @@ p {
     margin-bottom: 32px;
     margin: 16px;
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 2px solid #a35536;
+    border: 2px solid #152db3;
     min-height: 220px;
     display: flex;
     flex-direction: column;
@@ -1718,7 +1727,7 @@ p {
 }
 
 .cube.services-1 h3 {
-    color: #a35536;
+    color: #152db3;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 18px;
@@ -1755,8 +1764,8 @@ p {
 
 .cube.services-1:hover {
     transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(163, 85, 54, 0.719), 0 3px 12px rgba(163, 85, 54, 0.12);
-    background: #b96d4d;
+    box-shadow: 0 8px 32px rgba(#0c1858, #2e66ff, #042274), 0 3px 12px rgba(163, 85, 54, 0.12);
+    background: #152db3;
 }
 
 @media (max-width: 767.98px) {
@@ -1839,7 +1848,7 @@ p {
 
 .outil-logo span {
     font-size: 14px;
-    color: #a35536;
+    color: #152db3;
     font-weight: 600;
     text-align: center;
     margin-top: 2px;
@@ -1865,13 +1874,13 @@ p {
     justify-content: center;
     align-items: center;
     font-size: 28px;
-    color: #a35536;
+    color: #152db3;
     margin-bottom: 6px;
 }
 
 .contact-form .sous-titre {
     font-size: 15px;
-    color: #a35536;
+    color: #152db3;
     font-weight: 600;
     margin-bottom: 10px;
     text-align: center;
@@ -1898,7 +1907,7 @@ p {
 }
 .contact-form .form-control::placeholder,
 .contact-form textarea.form-control::placeholder {
-    color: #a35536;
+    color: #152db3;
     opacity: 1;
 }
 .contact-form .input-icon {
@@ -1906,7 +1915,7 @@ p {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #a35536;
+    color: #152db3;
     font-size: 12px;
     pointer-events: none;
     height: 16px;
@@ -1920,7 +1929,7 @@ p {
 
 .contact-form .btn {
     width: 100%;
-    background: #a35536;
+    background: #152db3;
     color: #fff;
     font-weight: 700;
     font-size: 15px;
@@ -1932,7 +1941,7 @@ p {
     padding: 10px 0;
 }
 .contact-form .btn:hover {
-    background: #7a2e13;
+    background: #152db3;
     transform: translateY(-1px) scale(1.01);
 }
 

@@ -145,10 +145,10 @@ function revenirCouleur() {
     var listItems = hoveredElement.querySelectorAll('li');
     
     if (h3Element) {
-        h3Element.style.color = "#a35536";
+        h3Element.style.color = "#152db3";
     }
     if (iconElement) {
-        iconElement.style.color = "#a35536";
+        iconElement.style.color = "#152db3";
     }
     listItems.forEach(function(li) {
         li.style.color = "#444";
@@ -206,11 +206,11 @@ function ouvrirRapport(url, titre) {
           github: "https://github.com/walae04/geoworld-02042025",
           description: "Geoworld est une application web de quiz géographique interactif qui permet aux utilisateurs de tester et améliorer leurs connaissances sur les pays du monde. L'application propose différents niveaux de difficulté et couvre les capitales, drapeaux et localisations géographiques à travers une interface ludique et intuitive.",
           techs: [
-            { nom: "JavaScript", icon: "fab fa-js-square" },
+            { nom: "PHP", icon: "fab fa-js-square" },
             { nom: "HTML5", icon: "fab fa-html5" },
             { nom: "CSS3", icon: "fab fa-css3-alt" },
             { nom: "API REST", icon: "fas fa-plug" },
-            { nom: "Canvas", icon: "fas fa-paint-brush" }
+            { nom: "SQL", icon: "fas fa-paint-brush" }
           ],
           fonctionnalites: [
             "Quiz sur les capitales, drapeaux et pays du monde",
@@ -228,7 +228,7 @@ function ouvrirRapport(url, titre) {
           github: "https://github.com/walae04/projet-ap",
           description: "MovieDb est une application web connectée à l'API TMDB (The Movie Database) permettant aux utilisateurs de rechercher des films, consulter leurs fiches détaillées (synopsis, casting, notes), et gérer une liste de films favoris. Le projet met en avant la consommation d'API REST et la manipulation dynamique du DOM.",
           techs: [
-            { nom: "JavaScript", icon: "fab fa-js-square" },
+            { nom: "PHP", icon: "fab fa-js-square" },
             { nom: "HTML5", icon: "fab fa-html5" },
             { nom: "CSS3", icon: "fab fa-css3-alt" },
             { nom: "API TMDB", icon: "fas fa-film" },
@@ -244,16 +244,16 @@ function ouvrirRapport(url, titre) {
         },
         ecommerce: {
           titre: "E-commerce — Maison Célisandre",
-          sousTitre: "Site web — Boutique artisanale en ligne",
+          sousTitre: "Site web — Boutique de fragrances en ligne",
           badge: "E-commerce",
           img: "img/Maison_Célisandre_BlackLogo.png",
           github: "https://github.com/walae04/walae04.github.io",
-          description: "Maison Célisandre est un site e-commerce complet développé pour une boutique artisanale. Il intègre un catalogue produits dynamique, un système de panier, une gestion des commandes, ainsi qu'une interface d'administration pour gérer les produits et les stocks. Le projet suit une architecture MVC en PHP avec une base de données MySQL.",
+          description: "Maison Célisandre est un site e-commerce complet développé pour une boutique de parfums. Il intègre un catalogue produits dynamique, un système de panier, une gestion des commandes, ainsi qu'une interface d'administration pour gérer les produits et les stocks. Le projet suit une architecture MVC en PHP avec une base de données MySQL.",
           techs: [
-            { nom: "PHP", icon: "fab fa-php" },
+            { nom: "Kotlin", icon: "fab fa-php" },
             { nom: "HTML5", icon: "fab fa-html5" },
             { nom: "CSS3 / Bootstrap", icon: "fab fa-css3-alt" },
-            { nom: "MySQL", icon: "fas fa-database" },
+            { nom: "Spring Boot", icon: "fas fa-database" },
             { nom: "Architecture MVC", icon: "fas fa-layer-group" }
           ],
           fonctionnalites: [
@@ -261,7 +261,7 @@ function ouvrirRapport(url, titre) {
             "Panier d'achat dynamique avec gestion des quantités",
             "Système d'inscription et connexion utilisateur",
             "Interface d'administration (CRUD produits/commandes)",
-            "Base de données relationnelle MySQL"
+            
           ]
         },
         savonapp: {
@@ -270,12 +270,11 @@ function ouvrirRapport(url, titre) {
           badge: "Application mobile",
           img: "img/Logo-Sav-App-02.jpeg",
           github: "https://github.com/walae04/Savon-app",
-          description: "Savon-app est une application mobile Android développée en Kotlin pour aider une savonnerie artisanale à gérer ses recettes, ses stocks de matières premières et ses productions. L'application communique avec un back-end Spring Boot via une API REST, et stocke les données dans une base MySQL. Elle vise à digitaliser et simplifier le suivi de production.",
+          description: "Savon-app est une application web développée en Angular pour aider une savonnerie artisanale à gérer ses recettes, ses stocks de matières premières et ses productions. L'application communique avec un back-end Spring Boot via une API REST. Elle vise à digitaliser et simplifier le suivi de production.",
           techs: [
-            { nom: "Kotlin", icon: "fas fa-mobile-alt" },
+            { nom: "Angular", icon: "fas fa-mobile-alt" },
             { nom: "Spring Boot", icon: "fas fa-leaf" },
             { nom: "API REST", icon: "fas fa-plug" },
-            { nom: "MySQL", icon: "fas fa-database" },
             { nom: "Architecture MVC", icon: "fas fa-layer-group" }
           ],
           fonctionnalites: [
@@ -283,7 +282,6 @@ function ouvrirRapport(url, titre) {
             "Suivi des stocks de matières premières",
             "Enregistrement et historique des productions",
             "Connexion avec un back-end Spring Boot via API REST",
-            "Interface Android native en Kotlin"
           ]
         }
       };
