@@ -59,6 +59,9 @@
                         <a href="#parcours" class="nav-link">Parcours</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#stages" class="nav-link">Stages</a>
+                      </li>
+                    <li class="nav-item">
                         <a href="#competences" class="nav-link">Compétences</a>
                     </li>
                     <li class="nav-item">
@@ -255,9 +258,6 @@
                             Savigny Le Temple
                         </p>
 
-                        <a href="doc/rapport2.pdf" target="_blank" class="btn" style="margin-top: 10px;">
-                            Voir mon rapport de stage
-                        </a>
 
                     </div>
                 </div>
@@ -270,9 +270,7 @@
                             Savigny Le Temple
                         </p>
 
-                        <a href="doc/rapport.pdf" target="_blank" class="btn" style="margin-top: 10px;">
-                            Voir mon rapport de stage
-                        </a>
+                        
 
                     </div>
                 </div>
@@ -311,7 +309,64 @@
         </div>
     </div>
     <!-- Parcours End -->
-
+<!-- Stages Start -->
+<section class="stages-section" id="stages">
+    <div class="container">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Mes Stages</p>
+      </div>
+      <div class="row">
+  
+        <!-- Stage 1ère année -->
+        <div class="col-md-6 wow fadeInLeft" data-wow-delay="0.1s">
+          <div class="stage-card">
+            <div class="stage-year">2025 — 1ère Année</div>
+            <h3>Stage BTS SIO SLAM — 1ère année</h3>
+            <h4><i class="fas fa-building"></i> Sismani — Savigny-le-Temple</h4>
+            <p>
+              Durant ce premier stage de 6 semaines, j'ai participé au développement d'une application web interne. 
+              J'ai pu mettre en pratique mes connaissances en HTML, CSS, JavaScript et PHP, 
+              tout en découvrant le fonctionnement d'une entreprise et les méthodes de travail en équipe.
+            </p>
+            <button class="btn btn-stage" onclick="ouvrirRapport('doc/rapport.pdf', 'Rapport de stage — 1ère année')">
+              <i class="fas fa-file-pdf"></i> Voir le rapport de stage
+            </button>
+          </div>
+        </div>
+  
+        <!-- Stage 2ème année -->
+        <div class="col-md-6 wow fadeInRight" data-wow-delay="0.2s">
+          <div class="stage-card">
+            <div class="stage-year">2026 — 2ème Année</div>
+            <h3>Stage BTS SIO SLAM — 2ème année</h3>
+            <h4><i class="fas fa-building"></i> Sismani — Savigny-le-Temple</h4>
+            <p>
+              Pour ce second stage de 6 semaines, j'ai approfondi mes compétences en développement 
+              d'applications web et mobile. J'ai travaillé sur des projets plus complexes impliquant 
+              des API REST, une base de données et une interface Angular, renforçant mon autonomie et 
+              ma capacité à livrer des fonctionnalités complètes.
+            </p>
+            <button class="btn btn-stage" onclick="ouvrirRapport('doc/rapport2.pdf', 'Rapport de stage — 2ème année')">
+              <i class="fas fa-file-pdf"></i> Voir le rapport de stage
+            </button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal Pop-up Rapport -->
+  <div id="rapportModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9999; justify-content:center; align-items:center;">
+    <div style="background:#fff; width:90%; max-width:900px; height:85vh; border-radius:12px; overflow:hidden; position:relative; display:flex; flex-direction:column;">
+      <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 20px; background:#a35536; color:#fff;">
+        <span id="rapportModalTitre" style="font-weight:600; font-size:1.05rem;"></span>
+        <button onclick="fermerRapport()" style="background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
+      <iframe id="rapportIframe" src="" style="flex:1; border:none; width:100%;"></iframe>
+    </div>
+  </div>
+  <!-- Stages End -->
 
     <!-- Compétences start-->
     <section class="ftco-section" id="competences">
@@ -508,202 +563,315 @@
 
 
     <!-- Portfolio Start -->
-    <div class="portfolio" id="projets">
-        <div class="container">
-            <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
-                <p>Mes projets </p>
+<div class="portfolio" id="projets">
+    <div class="container">
+      <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+        <p>Mes projets</p>
+      </div>
+   
+      <div class="row portfolio-container">
+   
+        <!-- ===== Projet 1 : Geoworld ===== -->
+        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.0s">
+          <div class="projet-card">
+            <div class="projet-img-wrap">
+              <img src="img/world-logo.png" alt="Geoworld">
+              <div class="projet-overlay">
+                <button class="btn btn-overlay" onclick="ouvrirProjet('geoworld')">
+                  <i class="fas fa-expand-alt"></i> Voir le projet
+                </button>
+              </div>
             </div>
-            <div class="row portfolio-container">
-                <!-- Projet 1 : Geoworld -->
-                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.0s"
-                    style="display:flex;justify-content:center;">
-                    <div class="portfolio-wrap" style="width:100%;max-width:350px;margin:0 auto;text-align:center;">
-                        <div class="portfolio-img"
-                            style="background:#eee;width:100%;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;">
-                            <img src="img/world-logo.png" alt="Geoworld"
-                                style="max-width:100%;max-height:100%;object-fit:cover;">
-                        </div>
-                        <div class="portfolio-text" style="margin-top:18px;">
-                            <h3 style="margin:0 0 10px 0;font-size:1.2rem;font-weight:700;">Geoworld</h3>
-                            <a href="https://github.com/walae04/geoworld-02042025" target="_blank"
-                                style="display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-size:15px;font-weight:600;color:#fff;background:#a35536;border-radius:6px;text-decoration:none;transition:background 0.2s;">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Projet 2 : MovieDb -->
-                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.2s"
-                    style="display:flex;justify-content:center;">
-                    <div class="portfolio-wrap" style="width:100%;max-width:350px;margin:0 auto;text-align:center;">
-                        <div class="portfolio-img"
-                            style="background:#eee;width:100%;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;">
-                            <img src="img/movie1.png" alt="MovieDb"
-                                style="max-width:100%;max-height:100%;object-fit:cover;">
-                        </div>
-                        <div class="portfolio-text" style="margin-top:18px;">
-                            <h3 style="margin:0 0 10px 0;font-size:1.2rem;font-weight:700;">MovieDb</h3>
-                            <a href="https://github.com/walae04/projet-ap" target="_blank"
-                                style="display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-size:15px;font-weight:600;color:#fff;background:#a35536;border-radius:6px;text-decoration:none;transition:background 0.2s;">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Projet 3 : Ecommerce -->
-                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.2s"
-                    style="display:flex;justify-content:center;">
-                    <div class="portfolio-wrap" style="width:100%;max-width:350px;margin:0 auto;text-align:center;">
-                        <div class="portfolio-img"
-                            style="background:#eee;width:100%;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;">
-                            <img src="img/Maison_Célisandre_BlackLogo.png" alt="E-commerce"
-                                style="max-width:100%;max-height:100%;object-fit:cover;">
-                        </div>
-                        <div class="portfolio-text" style="margin-top:18px;">
-                            <h3 style="margin:0 0 10px 0;font-size:1.2rem;font-weight:700;">E-commerce</h3>
-                            <a href="https://github.com/walae04/walae04.github.io" target="_blank"
-                                style="display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-size:15px;font-weight:600;color:#fff;background:#a35536;border-radius:6px;text-decoration:none;transition:background 0.2s;">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Projet 4 : savon-app -->
-                <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.2s"
-                    style="display:flex;justify-content:center;">
-                    <div class="portfolio-wrap" style="width:100%;max-width:350px;margin:0 auto;text-align:center;">
-                        <div class="portfolio-img"
-                            style="background:#eee;width:100%;height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;">
-                            <img src="img/Logo-Sav-App-02.jpeg" alt="Savon-app"
-                                style="max-width:100%;max-height:100%;object-fit:cover;">
-                        </div>
-                        <div class="portfolio-text" style="margin-top:18px;">
-                            <h3 style="margin:0 0 10px 0;font-size:1.2rem;font-weight:700;">Savon-app</h3>
-                            <a href="https://github.com/walae04/Savon-app" target="_blank"
-                                style="display:inline-flex;align-items:center;gap:6px;padding:7px 18px;font-size:15px;font-weight:600;color:#fff;background:#a35536;border-radius:6px;text-decoration:none;transition:background 0.2s;">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="projet-body">
+              <h3 class="projet-title">Geoworld</h3>
+              <p class="projet-desc-short">
+                Application web de quiz géographique interactif permettant de tester ses connaissances sur les pays, capitales et drapeaux du monde.
+              </p>
+              <div class="projet-tags">
+                <span class="tag tag-js">JavaScript</span>
+                <span class="tag tag-html">HTML/CSS</span>
+                <span class="tag tag-api">API REST</span>
+              </div>
+              <div class="projet-actions">
+                <button class="btn btn-projet-detail" onclick="ouvrirProjet('geoworld')">
+                  <i class="fas fa-info-circle"></i> En savoir plus
+                </button>
+                <a href="https://github.com/walae04/geoworld-02042025" target="_blank" class="btn btn-projet-github">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+   
+        <!-- ===== Projet 2 : MovieDb ===== -->
+        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.1s">
+          <div class="projet-card">
+            <div class="projet-img-wrap">
+              <img src="img/movie1.png" alt="MovieDb">
+              <div class="projet-overlay">
+                <button class="btn btn-overlay" onclick="ouvrirProjet('moviedb')">
+                  <i class="fas fa-expand-alt"></i> Voir le projet
+                </button>
+              </div>
+            </div>
+            <div class="projet-body">
+              <h3 class="projet-title">MovieDb</h3>
+              <p class="projet-desc-short">
+                Application de gestion et de recherche de films connectée à une API de base de données cinématographique, avec système de favoris.
+              </p>
+              <div class="projet-tags">
+                <span class="tag tag-js">JavaScript</span>
+                <span class="tag tag-html">HTML/CSS</span>
+                <span class="tag tag-api">API TMDB</span>
+              </div>
+              <div class="projet-actions">
+                <button class="btn btn-projet-detail" onclick="ouvrirProjet('moviedb')">
+                  <i class="fas fa-info-circle"></i> En savoir plus
+                </button>
+                <a href="https://github.com/walae04/projet-ap" target="_blank" class="btn btn-projet-github">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- ===== Projet 3 : E-commerce ===== -->
+        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.2s">
+          <div class="projet-card">
+            <div class="projet-img-wrap">
+              <img src="img/Maison_Célisandre_BlackLogo.png" alt="E-commerce Maison Célisandre">
+              <div class="projet-overlay">
+                <button class="btn btn-overlay" onclick="ouvrirProjet('ecommerce')">
+                  <i class="fas fa-expand-alt"></i> Voir le projet
+                </button>
+              </div>
+            </div>
+            <div class="projet-body">
+              <h3 class="projet-title">E-commerce — Maison Célisandre</h3>
+              <p class="projet-desc-short">
+                Site e-commerce complet pour une boutique artisanale, avec catalogue produits, panier d'achat et interface d'administration.
+              </p>
+              <div class="projet-tags">
+                <span class="tag tag-php">PHP</span>
+                <span class="tag tag-html">HTML/CSS</span>
+                <span class="tag tag-db">MySQL</span>
+              </div>
+              <div class="projet-actions">
+                <button class="btn btn-projet-detail" onclick="ouvrirProjet('ecommerce')">
+                  <i class="fas fa-info-circle"></i> En savoir plus
+                </button>
+                <a href="https://github.com/walae04/walae04.github.io" target="_blank" class="btn btn-projet-github">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+        <!-- ===== Projet 4 : Savon-app ===== -->
+        <div class="col-lg-6 col-md-6 col-sm-12 portfolio-item wow fadeInUp" data-wow-delay="0.3s">
+          <div class="projet-card">
+            <div class="projet-img-wrap">
+              <img src="img/Logo-Sav-App-02.jpeg" alt="Savon-app">
+              <div class="projet-overlay">
+                <button class="btn btn-overlay" onclick="ouvrirProjet('savonapp')">
+                  <i class="fas fa-expand-alt"></i> Voir le projet
+                </button>
+              </div>
+            </div>
+            <div class="projet-body">
+              <h3 class="projet-title">Savon-app</h3>
+              <p class="projet-desc-short">
+                Application mobile de gestion de suivi pour une savonnerie artisanale, permettant de gérer les recettes, stocks et productions.
+              </p>
+              <div class="projet-tags">
+                <span class="tag tag-kotlin">Kotlin</span>
+                <span class="tag tag-spring">Spring Boot</span>
+                <span class="tag tag-db">MySQL</span>
+                <span class="tag tag-api">API REST</span>
+              </div>
+              <div class="projet-actions">
+                <button class="btn btn-projet-detail" onclick="ouvrirProjet('savonapp')">
+                  <i class="fas fa-info-circle"></i> En savoir plus
+                </button>
+                <a href="https://github.com/walae04/Savon-app" target="_blank" class="btn btn-projet-github">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+      </div>
     </div>
+  </div>
+  <!-- Portfolio End -->
+   <!-- ============================================================
+     MODALS PROJETS
+     ============================================================ -->
+ 
+<!-- Overlay backdrop -->
+<div id="projetModalBackdrop" onclick="fermerProjet()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:9998;"></div>
+ 
+<!-- Modal container -->
+<div id="projetModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:92%; max-width:700px; max-height:88vh; overflow-y:auto; background:#fff; border-radius:16px; z-index:9999; box-shadow: 0 20px 60px rgba(0,0,0,0.4);">
+ 
+  <!-- Header modal -->
+  <div id="projetModalHeader" style="padding:24px 28px 0; position:relative;">
+    <button onclick="fermerProjet()" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.6rem; color:#888; cursor:pointer; line-height:1;">&times;</button>
+    <div id="projetModalBadge" class="modal-badge"></div>
+    <h2 id="projetModalTitre" style="font-size:1.5rem; font-weight:700; color:#222; margin:10px 0 4px;"></h2>
+    <p id="projetModalSousTitre" style="color:#a35536; font-weight:500; font-size:0.95rem; margin-bottom:0;"></p>
+  </div>
+ 
+  <!-- Image bannière -->
+  <div style="padding:20px 28px 0;">
+    <img id="projetModalImg" src="" alt="" style="width:100%; height:180px; object-fit:contain; border-radius:10px; background:#f5f0ec; padding:10px;">
+  </div>
+ 
+  <!-- Corps -->
+  <div style="padding:20px 28px 28px;">
+ 
+    <!-- Description -->
+    <div class="modal-section">
+      <div class="modal-section-title"><i class="fas fa-align-left"></i> Description</div>
+      <p id="projetModalDesc" style="color:#444; line-height:1.75; font-size:0.95rem;"></p>
+    </div>
+ 
+    <!-- Technologies -->
+    <div class="modal-section">
+      <div class="modal-section-title"><i class="fas fa-code"></i> Technologies utilisées</div>
+      <div id="projetModalTechs" class="modal-tech-list"></div>
+    </div>
+ 
+    <!-- Fonctionnalités -->
+    <div class="modal-section">
+      <div class="modal-section-title"><i class="fas fa-list-ul"></i> Fonctionnalités clés</div>
+      <ul id="projetModalFonc" class="modal-list"></ul>
+    </div>
+ 
+    <!-- Bouton GitHub -->
+    <div style="margin-top:24px; text-align:center;">
+      <a id="projetModalGithub" href="#" target="_blank" class="btn btn-projet-github" style="padding:11px 30px; font-size:1rem;">
+        <i class="fab fa-github"></i> Voir sur GitHub
+      </a>
+    </div>
+ 
+  </div>
+</div>
 <!-- Veille technologique Start -->
 <section class="veille" id="veille-technologique">
-
     <div class="container">
-
-        <div class="section-header text-center" data-aos="zoom-in">
-            <p>Veille Technologique</p>
-            <h2>IA et Ciblage Militaire</h2>
+   
+      <div class="section-header text-center">
+        <p>Veille Technologique</p>
+        <h2>L'IA dans le ciblage militaire</h2>
+        <p class="veille-intro-text">
+          Comment des technologies que j'utilise en formation — machine learning, API, cloud — sont appliquées dans des systèmes militaires réels.
+        </p>
+      </div>
+   
+      <!-- C'EST QUOI -->
+      <div class="veille-card">
+        <div class="veille-card-header">
+          <i class="fas fa-crosshairs"></i>
+          <h3>De quoi parle-t-on ?</h3>
         </div>
-
-        <!-- INTRO -->
-        <div class="veille-intro" data-aos="fade-up">
-            <p>
-                L’intelligence artificielle (IA) est de plus en plus utilisée dans le domaine militaire,
-                notamment pour analyser des données massives et accélérer la prise de décision lors
-                d’opérations. Cette veille technologique se concentre sur l’utilisation de l’IA dans le
-                ciblage militaire, et sur les tensions récentes autour de l’IA Claude de l’entreprise
-                Anthropic face au Pentagone.
-            </p>
+        <p>
+          <strong>Project Maven</strong> est un programme du Pentagone lancé en 2017 pour automatiser l'analyse de vidéos de drones militaires. Aujourd'hui, il s'est transformé en plateforme complète de ciblage assisté par IA, capable de traiter des dizaines de cibles par heure — là où des centaines d'analystes humains étaient nécessaires auparavant.
+        </p>
+        <p>
+          En mars 2026, lors d'opérations militaires en Iran, plus de 2 000 cibles ont été traitées en 4 jours grâce à ce système.
+        </p>
+      </div>
+   
+      <!-- TECHNOLOGIES -->
+      <div class="veille-card">
+        <div class="veille-card-header">
+          <i class="fas fa-code"></i>
+          <h3>Les technologies utilisées</h3>
         </div>
-
-        <!-- CONTEXTE -->
-        <div class="veille-section" data-aos="fade-up">
-            <div class="veille-header">
-                <div class="veille-icon past">
-                    <i class="fas fa-history"></i>
-                </div>
-                <h3>Contexte historique</h3>
-            </div>
-
-            <div class="veille-details">
-                <p>
-                    Depuis quelques années, le Pentagone et d’autres armées utilisent l’IA pour traiter
-                    rapidement des informations provenant de satellites, drones ou capteurs.
-                    <strong>Project Maven</strong> est un exemple notable : ce programme intègre
-                    des algorithmes de machine learning pour identifier et prioriser des cibles à partir
-                    d’images aériennes et de vidéos de surveillance.
-                </p>
-            </div>
+        <p>C'est là le lien direct avec mon domaine : la stack technique repose sur des outils que j'apprends en BTS SIO.</p>
+        <div class="veille-tech-grid">
+          <div class="veille-tech-item">
+            <span class="vtech-label">Computer Vision</span>
+            <span class="vtech-detail">TensorFlow / PyTorch — détection d'objets sur images satellites et flux vidéo drones</span>
+          </div>
+          <div class="veille-tech-item">
+            <span class="vtech-label">API REST</span>
+            <span class="vtech-detail">Les modules communiquent entre eux via des API, comme dans mes projets Angular / Spring Boot</span>
+          </div>
+          <div class="veille-tech-item">
+            <span class="vtech-label">Cloud classifié</span>
+            <span class="vtech-detail">AWS GovCloud (Impact Level 6) — même infrastructure qu'AWS classique, mais isolée</span>
+          </div>
+          <div class="veille-tech-item">
+            <span class="vtech-label">LLM — Claude / GPT</span>
+            <span class="vtech-detail">Intégrés via API pour synthétiser les renseignements et simuler des scénarios</span>
+          </div>
         </div>
-
-        <!-- UTILISATION ACTUELLE -->
-        <div class="veille-section" data-aos="fade-up">
-            <div class="veille-header">
-                <div class="veille-icon present">
-                    <i class="fas fa-robot"></i>
-                </div>
-                <h3>L’IA dans le ciblage militaire aujourd’hui</h3>
-            </div>
-
-            <div class="veille-details">
-                <ul>
-                    <li><strong>Ciblage accéléré :</strong> L’IA permet de sélectionner des cibles plus rapidement lors d’opérations, comme en Iran récemment où plusieurs centaines de frappes ont été coordonnées en quelques jours. <a href="https://www.ft.com/content/fedb262e-e6db-40bc-a4d0-080812f0f82b" target="_blank">Lire l’article</a>.</li>
-                    <li><strong>Conflit Anthropic / Pentagone :</strong> L’IA Claude a été utilisée dans certains systèmes militaires mais a été retirée après un désaccord sur les conditions d’utilisation. Microsoft a apporté un soutien juridique à Anthropic. <a href="https://www.theguardian.com/technology/2026/mar/12/microsoft-amicus-brief-anthropic-pentagon" target="_blank">Lire l’article</a>.</li>
-                    <li><strong>Prise de décision humaine :</strong> Même si l’IA analyse et priorise les cibles, un humain valide généralement les décisions critiques.</li>
-                </ul>
-            </div>
+      </div>
+   
+      <!-- ENJEUX -->
+      <div class="veille-card">
+        <div class="veille-card-header">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Ce que ça soulève</h3>
         </div>
-
-        <!-- ENJEUX & DEBATS -->
-        <div class="veille-section" data-aos="fade-up">
-            <div class="veille-header">
-                <div class="veille-icon impact">
-                    <i class="fas fa-exclamation-triangle"></i>
-                </div>
-                <h3>Enjeux et débats</h3>
+        <div class="veille-enjeux-row">
+          <div class="veille-enjeu">
+            <i class="fas fa-user-check"></i>
+            <div>
+              <strong>Contrôle humain</strong>
+              <p>Un humain valide toujours la décision finale — mais quand l'IA traite 80 cibles/heure, cette validation reste-t-elle réelle ?</p>
             </div>
-
-            <div class="veille-details">
-                <ul>
-                    <li><strong>Éthique :</strong> Qui est responsable en cas d’erreur de ciblage par l’IA ?</li>
-                    <li><strong>Rapidité vs contrôle humain :</strong> Les systèmes IA sont rapides mais nécessitent une supervision humaine pour éviter des erreurs critiques.</li>
-                    <li><strong>Compétition technologique :</strong> Les entreprises comme OpenAI, Microsoft et Anthropic sont impliquées dans la fourniture d’IA pour les systèmes militaires, ce qui pose des questions sur la sécurité et le contrôle.</li>
-                </ul>
+          </div>
+          <div class="veille-enjeu">
+            <i class="fas fa-bug"></i>
+            <div>
+              <strong>Biais des algorithmes</strong>
+              <p>Un modèle ML entraîné sur de mauvaises données peut produire des erreurs lourdes de conséquences dans ce contexte.</p>
             </div>
+          </div>
+          <div class="veille-enjeu">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Limites éthiques des LLM</strong>
+              <p>Anthropic a tenté de limiter l'usage militaire de Claude. OpenAI a accepté les mêmes conditions — illustrant le débat sur la responsabilité des développeurs.</p>
+            </div>
+          </div>
         </div>
-
-        <!-- ARTICLES -->
-        <div class="veille-section" data-aos="fade-up">
-            <div class="veille-header">
-                <div class="veille-icon news">
-                    <i class="fas fa-newspaper"></i>
-                </div>
-                <h3>Actualités récentes</h3>
-            </div>
-
-            <!-- Widget FeedWind filtré -->
-    <div id="feedwind-widget"></div>
-    <script type="text/javascript" 
-        src="https://feed.mikle.com/js/fw-loader.js" 
-        preloader-text="Loading" 
-        data-fw-param="177521/" 
-        data-fw-keywords="military,targeting,Pentagon,Claude,Anthropic,AI">
-    </script>
-
-        <!-- SOURCES -->
-        <div class="veille-section" data-aos="fade-up">
-            <div class="veille-header">
-                <div class="veille-icon source">
-                    <i class="fas fa-link"></i>
-                </div>
-                <h3>Sources de veille</h3>
-            </div>
-
-            <ul class="veille-sources">
-                <li><a href="https://www.ft.com/content/fedb262e-e6db-40bc-a4d0-080812f0f82b" target="_blank">Financial Times – AI et ciblage militaire</a></li>
-                <li><a href="https://www.theguardian.com/technology/2026/mar/12/microsoft-amicus-brief-anthropic-pentagon" target="_blank">The Guardian – Tensions Pentagone / Claude</a></li>
-                <li><a href="https://www.democracynow.org/2026/3/18/ai_warfare" target="_blank">Democracy Now – IA et guerre en Iran</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Project_Maven" target="_blank">Wikipedia – Project Maven</a></li>
-            </ul>
-        </div>
-
+      </div>
+   <!-- Flux RSS — Actualités en rapport avec la veille -->
+<div class="veille-card" style="margin-bottom: 18px;">
+    <div class="veille-card-header">
+      <i class="fas fa-rss"></i>
+      <h3>Actualités récentes</h3>
     </div>
-</section>
-<!-- Veille technologique End -->
+    <div id="feedwind-widget" class="feedwind-wrap"></div>
+    <script
+      type="text/javascript"
+      src="https://feed.mikle.com/js/fw-loader.js"
+      preloader-text="Chargement..."
+      data-fw-param="177521/"
+      data-fw-keywords="military AI targeting,Project Maven,Palantir,Anthropic Pentagon,Claude militaire,IA armée">
+    </script>
+  </div>
+      <!-- SOURCES -->
+      <div class="veille-sources-row">
+        <span>Sources :</span>
+        <a href="https://en.wikipedia.org/wiki/Project_Maven" target="_blank">Wikipedia — Project Maven</a>
+        <a href="https://intelligence-artificielle.developpez.com/actu/381452/" target="_blank">Developpez.com — Claude banni du Pentagone</a>
+        <a href="https://multipol360.com/lotan-adopte-lia-militaire-de-palantir-lourds-enjeux-geopolitiques/" target="_blank">MultiPol 360 — OTAN et Palantir</a>
+        <a href="https://invezz.com/fr/actualites/2026/03/14/lia-accelere-la-guerre/" target="_blank">Invezz — Iran 2026</a>
+      </div>
+   
+    </div>
+  </section>
+  <!-- Veille technologique End -->
+
 
     <!-- Contact Start -->
     <div class="contact wow fadeInUp" data-wow-delay="0.1s" id="contact">

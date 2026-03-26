@@ -101,20 +101,6 @@ $(document).ready(function() {
 
 
 
-
-
-    // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        center: true,
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            }
-        }
-    });
     
     
     
@@ -181,6 +167,168 @@ function filtrer(categorie) {
     });
 }   
 
+function ouvrirRapport(url, titre) {
+    document.getElementById('rapportIframe').src = url;
+    document.getElementById('rapportModalTitre').innerText = titre;
+    document.getElementById('rapportModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function fermerRapport() {
+    document.getElementById('rapportModal').style.display = 'none';
+    document.getElementById('rapportIframe').src = '';
+    document.body.style.overflow = '';
+  }
+  
+  // Fermer en cliquant sur l'overlay
+  document.getElementById('rapportModal').addEventListener('click', function(e) {
+    if (e.target === this) fermerRapport();
+  });
+
+    // Testimonials carousel
+    $(".testimonials-carousel").owlCarousel({
+        center: true,
+        autoplay: true,
+        dots: true,
+        loop: true,
+        responsive: {
+            0:{
+                items:1
+            }
+        }
+    });
+    const projetsData = {
+        geoworld: {
+          titre: "Geoworld",
+          sousTitre: "Application web — Quiz géographique",
+          badge: "Jeu interactif",
+          img: "img/world-logo.png",
+          github: "https://github.com/walae04/geoworld-02042025",
+          description: "Geoworld est une application web de quiz géographique interactif qui permet aux utilisateurs de tester et améliorer leurs connaissances sur les pays du monde. L'application propose différents niveaux de difficulté et couvre les capitales, drapeaux et localisations géographiques à travers une interface ludique et intuitive.",
+          techs: [
+            { nom: "JavaScript", icon: "fab fa-js-square" },
+            { nom: "HTML5", icon: "fab fa-html5" },
+            { nom: "CSS3", icon: "fab fa-css3-alt" },
+            { nom: "API REST", icon: "fas fa-plug" },
+            { nom: "Canvas", icon: "fas fa-paint-brush" }
+          ],
+          fonctionnalites: [
+            "Quiz sur les capitales, drapeaux et pays du monde",
+            "Système de score et de progression",
+            "Différents niveaux de difficulté",
+            "Consommation d'une API géographique externe",
+            "Interface responsive et animations interactives"
+          ]
+        },
+        moviedb: {
+          titre: "MovieDb",
+          sousTitre: "Application web — Base de données cinéma",
+          badge: "Application web",
+          img: "img/movie1.png",
+          github: "https://github.com/walae04/projet-ap",
+          description: "MovieDb est une application web connectée à l'API TMDB (The Movie Database) permettant aux utilisateurs de rechercher des films, consulter leurs fiches détaillées (synopsis, casting, notes), et gérer une liste de films favoris. Le projet met en avant la consommation d'API REST et la manipulation dynamique du DOM.",
+          techs: [
+            { nom: "JavaScript", icon: "fab fa-js-square" },
+            { nom: "HTML5", icon: "fab fa-html5" },
+            { nom: "CSS3", icon: "fab fa-css3-alt" },
+            { nom: "API TMDB", icon: "fas fa-film" },
+            { nom: "Fetch API", icon: "fas fa-plug" }
+          ],
+          fonctionnalites: [
+            "Recherche de films en temps réel via l'API TMDB",
+            "Affichage des détails : synopsis, acteurs, note moyenne",
+            "Système de films favoris (stockage local)",
+            "Filtrage par genre, année et popularité",
+            "Design responsive adapté mobile et desktop"
+          ]
+        },
+        ecommerce: {
+          titre: "E-commerce — Maison Célisandre",
+          sousTitre: "Site web — Boutique artisanale en ligne",
+          badge: "E-commerce",
+          img: "img/Maison_Célisandre_BlackLogo.png",
+          github: "https://github.com/walae04/walae04.github.io",
+          description: "Maison Célisandre est un site e-commerce complet développé pour une boutique artisanale. Il intègre un catalogue produits dynamique, un système de panier, une gestion des commandes, ainsi qu'une interface d'administration pour gérer les produits et les stocks. Le projet suit une architecture MVC en PHP avec une base de données MySQL.",
+          techs: [
+            { nom: "PHP", icon: "fab fa-php" },
+            { nom: "HTML5", icon: "fab fa-html5" },
+            { nom: "CSS3 / Bootstrap", icon: "fab fa-css3-alt" },
+            { nom: "MySQL", icon: "fas fa-database" },
+            { nom: "Architecture MVC", icon: "fas fa-layer-group" }
+          ],
+          fonctionnalites: [
+            "Catalogue produits avec filtres et recherche",
+            "Panier d'achat dynamique avec gestion des quantités",
+            "Système d'inscription et connexion utilisateur",
+            "Interface d'administration (CRUD produits/commandes)",
+            "Base de données relationnelle MySQL"
+          ]
+        },
+        savonapp: {
+          titre: "Savon-app",
+          sousTitre: "Application mobile — Gestion savonnerie",
+          badge: "Application mobile",
+          img: "img/Logo-Sav-App-02.jpeg",
+          github: "https://github.com/walae04/Savon-app",
+          description: "Savon-app est une application mobile Android développée en Kotlin pour aider une savonnerie artisanale à gérer ses recettes, ses stocks de matières premières et ses productions. L'application communique avec un back-end Spring Boot via une API REST, et stocke les données dans une base MySQL. Elle vise à digitaliser et simplifier le suivi de production.",
+          techs: [
+            { nom: "Kotlin", icon: "fas fa-mobile-alt" },
+            { nom: "Spring Boot", icon: "fas fa-leaf" },
+            { nom: "API REST", icon: "fas fa-plug" },
+            { nom: "MySQL", icon: "fas fa-database" },
+            { nom: "Architecture MVC", icon: "fas fa-layer-group" }
+          ],
+          fonctionnalites: [
+            "Gestion des recettes de savons (ingrédients, dosages)",
+            "Suivi des stocks de matières premières",
+            "Enregistrement et historique des productions",
+            "Connexion avec un back-end Spring Boot via API REST",
+            "Interface Android native en Kotlin"
+          ]
+        }
+      };
+       
+      function ouvrirProjet(id) {
+        const p = projetsData[id];
+        if (!p) return;
+       
+        document.getElementById('projetModalBadge').innerText = p.badge;
+        document.getElementById('projetModalTitre').innerText = p.titre;
+        document.getElementById('projetModalSousTitre').innerText = p.sousTitre;
+        document.getElementById('projetModalImg').src = p.img;
+        document.getElementById('projetModalImg').alt = p.titre;
+        document.getElementById('projetModalDesc').innerText = p.description;
+        document.getElementById('projetModalGithub').href = p.github;
+       
+        // Technologies
+        const techContainer = document.getElementById('projetModalTechs');
+        techContainer.innerHTML = '';
+        p.techs.forEach(t => {
+          techContainer.innerHTML += `<span class="modal-tech-item"><i class="${t.icon}"></i> ${t.nom}</span>`;
+        });
+       
+        // Fonctionnalités
+        const foncList = document.getElementById('projetModalFonc');
+        foncList.innerHTML = '';
+        p.fonctionnalites.forEach(f => {
+          foncList.innerHTML += `<li>${f}</li>`;
+        });
+       
+        document.getElementById('projetModalBackdrop').style.display = 'block';
+        document.getElementById('projetModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      }
+       
+      function fermerProjet() {
+        document.getElementById('projetModalBackdrop').style.display = 'none';
+        document.getElementById('projetModal').style.display = 'none';
+        document.body.style.overflow = '';
+      }
+       
+      // Fermer avec Echap
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') fermerProjet();
+      });
 // contact form
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     setTimeout(() => {
